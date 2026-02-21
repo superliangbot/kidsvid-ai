@@ -1,0 +1,26 @@
+{
+  "name": "@kidsvid/orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@kidsvid/shared": "*",
+    "@kidsvid/analyzer": "*",
+    "@kidsvid/generator": "*",
+    "@kidsvid/publisher": "*",
+    "@kidsvid/feedback": "*",
+    "bullmq": "^5.34.0",
+    "express": "^4.21.0",
+    "ioredis": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
