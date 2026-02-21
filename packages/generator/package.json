@@ -1,0 +1,17 @@
+{
+  "name": "@kidsvid/generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@kidsvid/shared": "*",
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
