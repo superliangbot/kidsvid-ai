@@ -5,7 +5,7 @@ import type {
   EpisodeStructure,
   Logger,
 } from '@kidsvid/shared';
-import { getTemplateForAge } from './templates/episode-structure.js';
+import { getTemplateForAge, ENGAGEMENT_HOOK_DESCRIPTIONS } from './templates/episode-structure.js';
 import { DEFAULT_CHARACTERS } from './character-bible.js';
 import { scoreContent } from './quality-scorer.js';
 
@@ -40,9 +40,10 @@ export class ScriptGenerator {
       .map((id) => DEFAULT_CHARACTERS[id])
       .filter(Boolean);
 
-    const prompt = this.buildPrompt(request, template, characters);
+    const basePrompt = this.buildPrompt(request, template, characters);
 
     let lastResult: GeneratedScript | null = null;
+    let currentPrompt = basePrompt;
 
     for (let attempt = 0; attempt <= this.maxRetries; attempt++) {
       this.logger.info(
@@ -50,7 +51,7 @@ export class ScriptGenerator {
         'Generating script',
       );
 
-      const response = await this.callLLM(prompt);
+      const response = await this.callLLM(currentPrompt);
       const parsed = this.parseResponse(response, request, template);
 
       // Quality gate
@@ -89,7 +90,8 @@ export class ScriptGenerator {
         'Script failed quality gate, retrying with feedback',
       );
 
-      // TODO: Append quality feedback to prompt for retry
+      // Append quality feedback to prompt for retry
+      currentPrompt = basePrompt + `\n\n## IMPORTANT: Previous attempt scored too low. Fix these issues:\n${score.feedback.map((f) => `- ${f}`).join('\n')}\n\nEducational score: ${score.educationalValue}/10 (need >=7)\nEngagement score: ${score.engagementPotential}/10 (need >=7)`;
     }
 
     this.logger.warn('Script did not pass quality gate after retries, returning best attempt');
@@ -235,15 +237,9 @@ ${template.promptGuidance}
 }
 
 function formatHookType(hook: EngagementHookType): string {
-  const descriptions: Record<EngagementHookType, string> = {
-    mystery_reveal: 'Mystery/reveal — "What\'s behind door number 3?" "Can you guess what color this makes?"',
-    call_response: 'Call and response — pause for kids to answer. "Can you count with me? 1... 2... 3!"',
-    reward_loop: 'Reward loop — celebration animations/sounds when "correct" answer shown. Stars, confetti!',
-    cliffhanger: 'Cliffhanger — "Next time, we visit the OCEAN! What animals will we find?"',
-    character_growth: 'Character growth — character learns alongside the kid, makes mistakes, tries again',
-    easter_egg: 'Easter egg/running gag — recurring silly moments kids anticipate',
-    pattern_interrupt: 'Pattern interrupt — unexpected funny moment to maintain attention',
-    direct_address: 'Direct address (Dora formula) — talk to viewer, wait for "response", celebrate together',
-  };
-  return descriptions[hook] || hook;
+  const desc = ENGAGEMENT_HOOK_DESCRIPTIONS[hook];
+  if (desc) {
+    return `${desc.name} — ${desc.description} Example: ${desc.example}`;
+  }
+  return hook;
 }
