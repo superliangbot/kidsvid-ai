@@ -271,7 +271,7 @@ export const KIDS_CONTENT_RULES = {
 
 export const TOP_KIDS_CHANNELS = [
   { name: 'Cocomelon', channelId: 'UCbCmjCuTUZos6Inko4u57UQ' },
-  { name: 'Like Nastya', channelId: 'UCJplp5SWAUApMJerU0Q2OBg' },
+  { name: 'Like Nastya', channelId: 'UCJplp5SjeGSdVdwsfb9Q7lQ' },
   { name: 'Kids Diana Show', channelId: 'UCk8GzjMOrta8yxDcKfylJYw' },
   { name: 'Vlad and Niki', channelId: 'UCvlE5gTbOvjiolFlEm-c_Ow' },
   { name: 'ChuChu TV', channelId: 'UCBnZ16ahKA2DZ_T5W0FPUXg' },
@@ -281,7 +281,7 @@ export const TOP_KIDS_CHANNELS = [
   { name: 'Little Angel', channelId: 'UCEh_mFgaciFz5YgfLMPe8Xg' },
   { name: 'Blippi', channelId: 'UC5PYHgAzJ1wLEidB58SK6Xw' },
   { name: 'Moonbug Kids', channelId: 'UCuv7gJnHjVJLp-FXCslBz4A' },
-  { name: 'Hey Bear Sensory', channelId: 'UCtMYJl_sBimqnuFwOCs3HbQ' },
+  { name: 'Hey Bear Sensory', channelId: 'UCtf9cFBJkHVAf2qMqF01xYg' },
   { name: 'Peppa Pig Official', channelId: 'UCAOtE1V7Ots4DjM8JLlrYgg' },
   { name: 'Nick Jr.', channelId: 'UC5partMoL_36OOhBqMBkGSQ' },
   { name: 'Sesame Street', channelId: 'UCFa-x-FIIMQ-hJBClYTMNjQ' },
@@ -300,4 +300,5 @@ export const TOP_KIDS_CHANNELS = [
   { name: 'LooLoo Kids', channelId: 'UC4NALVCmcmL5ntpV0thoH6w' },
   { name: 'El Reino Infantil', channelId: 'UCNxmTjQIlg2LMMpx10ljmEQ' },
   { name: 'Cartoon Network', channelId: 'UCa-vrCLQHviTOVnEKDOdetQ' },
+  { name: 'Bluey', channelId: 'UCVzLLZkDuFGAE2BGdBuBNBg' },
 ] as const;
