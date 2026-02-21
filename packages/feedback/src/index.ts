@@ -1,3 +1,7 @@
-export { PerformanceTracker } from './tracker.js';
-export { StrategyScorer, type StrategyInput } from './scorer.js';
-export { ReportGenerator, type WeeklyReport } from './reporter.js';
+export { PerformanceTracker, type Benchmark, type TrackedVideo } from './tracker.js';
+export { StrategyScorer, type StrategyInput, type StrategyDimension } from './scorer.js';
+export {
+  ReportGenerator,
+  type WeeklyReport,
+  type GeneratorConfigUpdate,
+} from './reporter.js';
