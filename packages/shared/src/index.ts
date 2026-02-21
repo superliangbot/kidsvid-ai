@@ -10,3 +10,4 @@ export {
   parseDuration,
   type YouTubeClientOptions,
 } from './youtube/client.js';
+export { withRetry, isRetryableError, type RetryOptions } from './retry.js';
