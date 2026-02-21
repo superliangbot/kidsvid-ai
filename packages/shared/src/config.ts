@@ -20,14 +20,19 @@ const configSchema = z.object({
   // OpenAI
   openaiApiKey: z.string().default(''),
 
+  // Google (Gemini, Veo, Music, TTS)
+  googleApiKey: z.string().default(''),
+
   // ElevenLabs
   elevenlabsApiKey: z.string().default(''),
 
   // Suno
   sunoApiKey: z.string().default(''),
 
-  // Video provider
-  videoProvider: z.enum(['runway', 'kling', 'sora']).default('runway'),
+  // Providers
+  videoProvider: z.enum(['veo', 'nanobanana', 'runway', 'kling', 'sora']).default('veo'),
+  musicProvider: z.enum(['gemini', 'suno']).default('gemini'),
+  voiceProvider: z.enum(['openai', 'gemini']).default('openai'),
   runwayApiKey: z.string().default(''),
 
   // YouTube OAuth
@@ -57,9 +62,12 @@ export function loadConfig(): Config {
     redisUrl: process.env.REDIS_URL,
     anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     openaiApiKey: process.env.OPENAI_API_KEY,
+    googleApiKey: process.env.GOOGLE_API_KEY,
     elevenlabsApiKey: process.env.ELEVENLABS_API_KEY,
     sunoApiKey: process.env.SUNO_API_KEY,
     videoProvider: process.env.VIDEO_PROVIDER,
+    musicProvider: process.env.MUSIC_PROVIDER,
+    voiceProvider: process.env.VOICE_PROVIDER,
     runwayApiKey: process.env.RUNWAY_API_KEY,
     youtubeClientId: process.env.YOUTUBE_CLIENT_ID,
     youtubeClientSecret: process.env.YOUTUBE_CLIENT_SECRET,
