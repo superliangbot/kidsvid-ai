@@ -18,4 +18,5 @@ export {
   ThumbnailIntelligence,
   THUMBNAIL_PATTERNS,
 } from './thumbnail-intelligence.js';
+export { ContentDeduplicator, type DedupCheck, type DedupResult } from './dedup.js';
 export * from './providers/index.js';
