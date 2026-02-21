@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-02-21T19:24:06.908Z",
+  "timestamp": "2026-02-21T21:35:17.361Z",
   "channels": [
     {
       "channelId": "UCvlE5gTbOvjiolFlEm-c_Ow",
       "name": "Vlad and Niki",
       "primaryCategory": "story",
       "uploadFrequency": 2.2,
-      "avgViews": 11202579,
-      "avgLikes": 15006,
+      "avgViews": 11215236,
+      "avgLikes": 15019,
       "engagementRate": 0.0021,
       "topVideoIds": [
         "MmsPeLGSbn8",
@@ -24,8 +24,8 @@
       "name": "Cocomelon - Nursery Rhymes",
       "primaryCategory": "song",
       "uploadFrequency": 8.8,
-      "avgViews": 2431293,
-      "avgLikes": 12616,
+      "avgViews": 2444625,
+      "avgLikes": 12659,
       "engagementRate": 0.0056,
       "topVideoIds": [
         "FOtYQcHxgyU",
@@ -34,7 +34,7 @@
         "hkqmk36TxQA",
         "IEK-OYBDNAk"
       ],
-      "score": 0.4699214719894626,
+      "score": 0.4703933770997765,
       "rank": 2
     },
     {
@@ -42,8 +42,8 @@
       "name": "Like Nastya",
       "primaryCategory": "challenge",
       "uploadFrequency": 2.5,
-      "avgViews": 6051625,
-      "avgLikes": 26225,
+      "avgViews": 6064537,
+      "avgLikes": 26270,
       "engagementRate": 0.0036,
       "topVideoIds": [
         "x5sRhX-IbsM",
@@ -52,7 +52,7 @@
         "I4AsiP04kuA",
         "7x3iRVRHiDs"
       ],
-      "score": 0.4330446900380099,
+      "score": 0.4333155134891284,
       "rank": 3
     },
     {
@@ -60,9 +60,9 @@
       "name": "Numberblocks",
       "primaryCategory": "educational",
       "uploadFrequency": 9.1,
-      "avgViews": 416139,
-      "avgLikes": 1650,
-      "engagementRate": 0.006,
+      "avgViews": 419366,
+      "avgLikes": 1661,
+      "engagementRate": 0.0059,
       "topVideoIds": [
         "Bo6lJrdeAfM",
         "Rq9tCATCvak",
@@ -70,7 +70,7 @@
         "88Tgsaw7wfE",
         "06-aquZ1Azo"
       ],
-      "score": 0.3985733570814364,
+      "score": 0.3956962628338806,
       "rank": 4
     },
     {
@@ -78,9 +78,9 @@
       "name": "Bluey - Official Channel",
       "primaryCategory": "animation",
       "uploadFrequency": 9.1,
-      "avgViews": 656139,
-      "avgLikes": 1821,
-      "engagementRate": 0.0052,
+      "avgViews": 663088,
+      "avgLikes": 1837,
+      "engagementRate": 0.0049,
       "topVideoIds": [
         "eyU_Q9hExrY",
         "Z7s0tcZZ_mM",
@@ -88,7 +88,7 @@
         "LLQUJeEgztg",
         "zjq2HFKZnSE"
       ],
-      "score": 0.38528517620808567,
+      "score": 0.3765619280771265,
       "rank": 5
     },
     {
@@ -96,8 +96,8 @@
       "name": "Blippi - Educational Videos for Kids",
       "primaryCategory": "educational",
       "uploadFrequency": 7.3,
-      "avgViews": 408189,
-      "avgLikes": 2332,
+      "avgViews": 410038,
+      "avgLikes": 2340,
       "engagementRate": 0.0064,
       "topVideoIds": [
         "KZO7QyubF5E",
@@ -106,7 +106,7 @@
         "rxqCPv3I0AI",
         "DtqaQMmJ-Jw"
       ],
-      "score": 0.37065808851242654,
+      "score": 0.3707199604240102,
       "rank": 6
     },
     {
@@ -114,8 +114,8 @@
       "name": "Baby Shark - Pinkfong Kids’ Songs & Stories",
       "primaryCategory": "song",
       "uploadFrequency": 6.8,
-      "avgViews": 1155273,
-      "avgLikes": 2158,
+      "avgViews": 1159266,
+      "avgLikes": 2169,
       "engagementRate": 0.0041,
       "topVideoIds": [
         "CqgcFpcN2Ow",
@@ -124,7 +124,7 @@
         "u_3VT0B8j7c",
         "d9DNWD_PO2A"
       ],
-      "score": 0.3240133636918059,
+      "score": 0.3241331890312056,
       "rank": 7
     },
     {
@@ -132,9 +132,9 @@
       "name": "✿ Kids Diana Show",
       "primaryCategory": "educational",
       "uploadFrequency": 6,
-      "avgViews": 1200808,
-      "avgLikes": 3304,
-      "engagementRate": 0.004,
+      "avgViews": 1206572,
+      "avgLikes": 3314,
+      "engagementRate": 0.0039,
       "topVideoIds": [
         "HVnNNjNfVb8",
         "0DljmVupXtQ",
@@ -142,7 +142,7 @@
         "BHnKy53rjrk",
         "aXEeGWn2ymY"
       ],
-      "score": 0.3054632906257715,
+      "score": 0.30265977744741346,
       "rank": 8
     },
     {
@@ -150,8 +150,8 @@
       "name": "Super Simple Songs - Kids Songs",
       "primaryCategory": "song",
       "uploadFrequency": 0.7,
-      "avgViews": 5387704,
-      "avgLikes": 3585,
+      "avgViews": 5391300,
+      "avgLikes": 3587,
       "engagementRate": 0.0009,
       "topVideoIds": [
         "BM7Cg905Wo8",
@@ -160,7 +160,7 @@
         "UXt2bNp77u0",
         "W0ubdDYJRmg"
       ],
-      "score": 0.2828517435343031,
+      "score": 0.28274068100820104,
       "rank": 9
     },
     {
@@ -168,8 +168,8 @@
       "name": "Hey Bear Sensory",
       "primaryCategory": "song",
       "uploadFrequency": 0.4,
-      "avgViews": 3654170,
-      "avgLikes": 9189,
+      "avgViews": 3656541,
+      "avgLikes": 9194,
       "engagementRate": 0.0035,
       "topVideoIds": [
         "kAxdvigZtw8",
@@ -178,144 +178,194 @@
         "UIMa-VKM5Lc",
         "WMUNharKSNY"
       ],
-      "score": 0.2768862425329927,
+      "score": 0.27680788539079176,
       "rank": 10
     }
   ],
   "engagementStats": {
     "totalVideos": 300,
-    "totalViews": 976917535,
-    "totalLikes": 2336568,
+    "totalViews": 978917056,
+    "totalLikes": 2341437,
     "totalComments": 68,
-    "avgViews": 3256391.783333333,
-    "avgLikes": 7788.56,
+    "avgViews": 3263056.8533333335,
+    "avgLikes": 7804.79,
     "avgComments": 0.22666666666666666,
-    "avgEngagementRate": 0.0041351205480751425,
-    "medianViews": 1198555,
-    "top10PctAvgViews": 17787183.733333334,
-    "bottom10PctAvgViews": 76491.23333333334,
-    "viewsPerDay": 110071.89230250962
+    "avgEngagementRate": 0.004080892688759833,
+    "medianViews": 1200652.5,
+    "top10PctAvgViews": 17804359.6,
+    "bottom10PctAvgViews": 80128.76666666666,
+    "viewsPerDay": 109240.27008531448
   },
   "viralOutliers": [
     {
       "title": "Nastya and Evelyn - new Challenge",
-      "views": 57851683,
-      "multiplier": 17.8,
+      "views": 57890081,
+      "multiplier": 17.7,
       "category": "challenge"
     },
     {
       "title": "Kids learn to be responsible",
-      "views": 46486598,
+      "views": 46544018,
       "multiplier": 14.3,
       "category": "educational"
     },
     {
       "title": "Sesame Street & Super Simple Songs Sing What's Your Name? | Kids Song | Let's Be Friends!",
-      "views": 46386780,
+      "views": 46400238,
       "multiplier": 14.2,
       "category": "song"
     },
     {
       "title": "Fishing boat challenge for kids",
-      "views": 35702262,
-      "multiplier": 11,
+      "views": 35706605,
+      "multiplier": 10.9,
       "category": "story"
     },
     {
       "title": "Kids learn the importance of healthy food",
-      "views": 32515978,
+      "views": 32522118,
       "multiplier": 10,
       "category": "educational"
     },
     {
       "title": "Nastya and the funny story Rich vs. Poor",
-      "views": 24381174,
+      "views": 24436361,
       "multiplier": 7.5,
       "category": "story"
     },
     {
       "title": "Learn Wild Animals Names & Facts for kids!",
-      "views": 20676199,
+      "views": 20680272,
       "multiplier": 6.3,
       "category": "educational"
     },
     {
       "title": "Dancing Fruit and Funky Veggies  - Hey Bear Sensory - Party Remix! - Dance Video",
-      "views": 20162175,
+      "views": 20169017,
       "multiplier": 6.2,
       "category": "song"
     },
     {
       "title": "Chris and Alice Twin Smash! Super Team Up!",
-      "views": 19499326,
+      "views": 19508857,
       "multiplier": 6,
       "category": "story"
     },
     {
       "title": "Blockworld Survival with Chris and Michael",
-      "views": 17777702,
+      "views": 17814662,
       "multiplier": 5.5,
       "category": "story"
     },
     {
       "title": "Chris and Mike visited MONSTER JAM show",
-      "views": 16588784,
+      "views": 16592802,
       "multiplier": 5.1,
       "category": "story"
     },
     {
       "title": "Mike becomes a pilot and saves his friends   best stories for kids",
-      "views": 15520340,
+      "views": 15524532,
       "multiplier": 4.8,
       "category": "story"
     },
     {
       "title": "This Is My Face | Parts Of The Face Song! | Super Simple Songs",
-      "views": 14960501,
+      "views": 14963390,
       "multiplier": 4.6,
       "category": "song"
     },
     {
-      "title": "Where Is My Body? | Let’s Find the Body Parts | Hoi’s Playground | Pinkfong Official",
-      "views": 13533213,
-      "multiplier": 4.2,
-      "category": "nursery_rhyme"
-    },
-    {
       "title": "Nastya and Rich vs Poor Hospital",
-      "views": 13728986,
+      "views": 13731522,
       "multiplier": 4.2,
       "category": "challenge"
     },
     {
+      "title": "Where Is My Body? | Let’s Find the Body Parts | Hoi’s Playground | Pinkfong Official",
+      "views": 13562315,
+      "multiplier": 4.2,
+      "category": "nursery_rhyme"
+    },
+    {
       "title": "Nastya and the friendly competition Cold VS Hot",
-      "views": 12064039,
+      "views": 12120902,
       "multiplier": 3.7,
       "category": "challenge"
     },
     {
       "title": "Kids turn into Superheroes - Christmas Toys story for children",
-      "views": 10924163,
-      "multiplier": 3.4,
+      "views": 10926923,
+      "multiplier": 3.3,
       "category": "story"
     },
     {
       "title": "Hey Bear Sensory - Happy Halloween Dance Party! - Funky Veggies Dress up for Halloween!",
-      "views": 10613839,
+      "views": 10615902,
       "multiplier": 3.3,
       "category": "song"
     },
     {
       "title": "Dinosaur Rescue Adventure and other funny stories for kids",
-      "views": 10304821,
+      "views": 10317963,
       "multiplier": 3.2,
       "category": "story"
     },
     {
       "title": "Clara The Cow | Silly Animal Song for Kids! | Super Simple Songs",
-      "views": 9890656,
+      "views": 9893535,
       "multiplier": 3,
       "category": "song"
+    }
+  ],
+  "contentGaps": [
+    {
+      "category": "story",
+      "topic": "character-driven moral stories",
+      "demand": 11215236,
+      "supply": 1,
+      "opportunity": 11215236,
+      "recommendation": "Low competition in \"story\" with 11.2M avg views — strong opportunity"
+    },
+    {
+      "category": "challenge",
+      "topic": "educational challenges and quizzes",
+      "demand": 6064537,
+      "supply": 1,
+      "opportunity": 6064537,
+      "recommendation": "Low competition in \"challenge\" with 6.1M avg views — strong opportunity"
+    },
+    {
+      "category": "animation",
+      "topic": "educational cartoon series",
+      "demand": 663088,
+      "supply": 1,
+      "opportunity": 663088,
+      "recommendation": "Low competition in \"animation\" with 663K avg views — strong opportunity"
+    },
+    {
+      "category": "nursery_rhyme",
+      "topic": "modern nursery rhymes with educational twists",
+      "demand": 0,
+      "supply": 0,
+      "opportunity": 0,
+      "recommendation": "No competitors in \"nursery_rhyme\" — first-mover advantage opportunity"
+    },
+    {
+      "category": "roleplay",
+      "topic": "profession roleplay (doctor, firefighter)",
+      "demand": 0,
+      "supply": 0,
+      "opportunity": 0,
+      "recommendation": "No competitors in \"roleplay\" — first-mover advantage opportunity"
+    },
+    {
+      "category": "unboxing",
+      "topic": "educational toy reviews",
+      "demand": 0,
+      "supply": 0,
+      "opportunity": 0,
+      "recommendation": "No competitors in \"unboxing\" — first-mover advantage opportunity"
     }
   ],
   "patterns": [
@@ -327,8 +377,8 @@
       "sampleSize": 300,
       "metadata": {
         "avgLength": 63,
-        "shortAvgViews": 5303983.333333333,
-        "longAvgViews": 2806920.4674796746
+        "shortAvgViews": 5311589.722222222,
+        "longAvgViews": 2813378.9065040653
       }
     },
     {
@@ -340,8 +390,8 @@
       "metadata": {
         "emojiCount": 115,
         "emojiPct": 38,
-        "emojiAvgViews": 1054843.7217391303,
-        "noEmojiAvgViews": 4624921.65945946
+        "emojiAvgViews": 1060762.052173913,
+        "noEmojiAvgViews": 4632050.918918919
       }
     },
     {
@@ -436,6 +486,86 @@
       }
     },
     {
+      "patternType": "title_length",
+      "category": "educational",
+      "finding": "[educational] Average title length: 65 chars across 77 videos.",
+      "confidence": 0.7,
+      "sampleSize": 77,
+      "metadata": {
+        "avgLength": 65
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "animation",
+      "finding": "[animation] Average title length: 63 chars across 49 videos.",
+      "confidence": 0.7,
+      "sampleSize": 49,
+      "metadata": {
+        "avgLength": 63
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "song",
+      "finding": "[song] Average title length: 71 chars across 90 videos.",
+      "confidence": 0.7,
+      "sampleSize": 90,
+      "metadata": {
+        "avgLength": 71
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "story",
+      "finding": "[story] Average title length: 49 chars across 32 videos.",
+      "confidence": 0.7,
+      "sampleSize": 32,
+      "metadata": {
+        "avgLength": 49
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "challenge",
+      "finding": "[challenge] Average title length: 41 chars across 15 videos.",
+      "confidence": 0.7,
+      "sampleSize": 15,
+      "metadata": {
+        "avgLength": 41
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "roleplay",
+      "finding": "[roleplay] Average title length: 37 chars across 5 videos.",
+      "confidence": 0.7,
+      "sampleSize": 5,
+      "metadata": {
+        "avgLength": 37
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "other",
+      "finding": "[other] Average title length: 40 chars across 11 videos.",
+      "confidence": 0.7,
+      "sampleSize": 11,
+      "metadata": {
+        "avgLength": 40
+      }
+    },
+    {
+      "patternType": "title_length",
+      "category": "nursery_rhyme",
+      "finding": "[nursery_rhyme] Average title length: 80 chars across 18 videos.",
+      "confidence": 0.7,
+      "sampleSize": 18,
+      "metadata": {
+        "avgLength": 80
+      }
+    },
+    {
       "patternType": "duration",
       "category": null,
       "finding": "Average duration: 20m42s, Median: 4m45s. Distribution: short (<2min): 121 videos, avg 2.3M views; medium (2-5min): 37 videos, avg 3.5M views; long (5-10min): 8 videos, avg 1.7M views; very_long (>10min): 134 videos, avg 4.1M views.",
@@ -448,22 +578,22 @@
           {
             "label": "short (<2min)",
             "count": 121,
-            "avgViews": 2313540.6694214875
+            "avgViews": 2318877.5371900825
           },
           {
             "label": "medium (2-5min)",
             "count": 37,
-            "avgViews": 3529836.135135135
+            "avgViews": 3535985.918918919
           },
           {
             "label": "long (5-10min)",
             "count": 8,
-            "avgViews": 1654703.375
+            "avgViews": 1668490.5
           },
           {
             "label": "very_long (>10min)",
             "count": 134,
-            "avgViews": 4127892.1641791044
+            "avgViews": 4135473.6641791044
           }
         ]
       }
@@ -478,8 +608,88 @@
         "bestBucket": {
           "label": "very_long (>10min)",
           "count": 134,
-          "avgViews": 4127892.1641791044
+          "avgViews": 4135473.6641791044
         }
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "educational",
+      "finding": "[educational] Average duration: 24m4s across 76 videos.",
+      "confidence": 0.75,
+      "sampleSize": 76,
+      "metadata": {
+        "avgDuration": 1444.328947368421
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "animation",
+      "finding": "[animation] Average duration: 29m15s across 46 videos.",
+      "confidence": 0.75,
+      "sampleSize": 46,
+      "metadata": {
+        "avgDuration": 1755.0869565217392
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "song",
+      "finding": "[song] Average duration: 15m38s across 83 videos.",
+      "confidence": 0.75,
+      "sampleSize": 83,
+      "metadata": {
+        "avgDuration": 938.3132530120482
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "story",
+      "finding": "[story] Average duration: 29m33s across 32 videos.",
+      "confidence": 0.75,
+      "sampleSize": 32,
+      "metadata": {
+        "avgDuration": 1772.53125
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "challenge",
+      "finding": "[challenge] Average duration: 15m19s across 15 videos.",
+      "confidence": 0.75,
+      "sampleSize": 15,
+      "metadata": {
+        "avgDuration": 918.5333333333333
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "roleplay",
+      "finding": "[roleplay] Average duration: 15m20s across 5 videos.",
+      "confidence": 0.75,
+      "sampleSize": 5,
+      "metadata": {
+        "avgDuration": 920
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "other",
+      "finding": "[other] Average duration: 2m24s across 11 videos.",
+      "confidence": 0.75,
+      "sampleSize": 11,
+      "metadata": {
+        "avgDuration": 144
+      }
+    },
+    {
+      "patternType": "duration",
+      "category": "nursery_rhyme",
+      "finding": "[nursery_rhyme] Average duration: 12m50s across 18 videos.",
+      "confidence": 0.75,
+      "sampleSize": 18,
+      "metadata": {
+        "avgDuration": 770.4444444444445
       }
     },
     {
@@ -495,7 +705,7 @@
     {
       "patternType": "tags_popular",
       "category": null,
-      "finding": "Most used tags: \"nursery rhymes\" (108x, avg 2.6M views), \"kids\" (92x, avg 4.2M views), \"kindergarten\" (84x, avg 2.8M views), \"songs for kids\" (80x, avg 2.6M views), \"cartoon\" (76x, avg 1.5M views), \"for kids\" (75x, avg 7.8M views), \"preschool\" (64x, avg 3.6M views), \"babies\" (61x, avg 2.4M views), \"bluey disney junior\" (60x, avg 656.1K views), \"family\" (60x, avg 6.2M views), \"kids animation\" (60x, avg 1.8M views), \"toys\" (60x, avg 6.7M views), \"kids education\" (59x, avg 1.8M views), \"fun\" (55x, avg 6.5M views), \"baby\" (54x, avg 2.6M views).",
+      "finding": "Most used tags: \"nursery rhymes\" (108x, avg 2.6M views), \"kids\" (92x, avg 4.2M views), \"kindergarten\" (84x, avg 2.8M views), \"songs for kids\" (80x, avg 2.6M views), \"cartoon\" (76x, avg 1.5M views), \"for kids\" (75x, avg 7.8M views), \"preschool\" (64x, avg 3.6M views), \"babies\" (61x, avg 2.4M views), \"toys\" (60x, avg 6.7M views), \"family\" (60x, avg 6.2M views), \"kids animation\" (60x, avg 1.8M views), \"bluey disney junior\" (60x, avg 663.1K views), \"kids education\" (59x, avg 1.8M views), \"fun\" (55x, avg 6.5M views), \"baby\" (54x, avg 2.6M views).",
       "confidence": 0.75,
       "sampleSize": 297,
       "metadata": {
@@ -503,152 +713,152 @@
           {
             "tag": "nursery rhymes",
             "count": 108,
-            "avgViews": 2563266.314814815
+            "avgViews": 2569360.064814815
           },
           {
             "tag": "kids",
             "count": 92,
-            "avgViews": 4167602.532608696
+            "avgViews": 4174006.9565217393
           },
           {
             "tag": "kindergarten",
             "count": 84,
-            "avgViews": 2824211.214285714
+            "avgViews": 2831013.4285714286
           },
           {
             "tag": "songs for kids",
             "count": 80,
-            "avgViews": 2605987.8875
+            "avgViews": 2609341.675
           },
           {
             "tag": "cartoon",
             "count": 76,
-            "avgViews": 1457509.3026315789
+            "avgViews": 1463875.9342105263
           },
           {
             "tag": "for kids",
             "count": 75,
-            "avgViews": 7822520.213333333
+            "avgViews": 7830971.68
           },
           {
             "tag": "preschool",
             "count": 64,
-            "avgViews": 3630457.59375
+            "avgViews": 3638553.3125
           },
           {
             "tag": "babies",
             "count": 61,
-            "avgViews": 2398724.606557377
-          },
-          {
-            "tag": "bluey disney junior",
-            "count": 60,
-            "avgViews": 656138.6333333333
-          },
-          {
-            "tag": "family",
-            "count": 60,
-            "avgViews": 6232185.45
-          },
-          {
-            "tag": "kids animation",
-            "count": 60,
-            "avgViews": 1758434.5333333334
+            "avgViews": 2401923.7377049183
           },
           {
             "tag": "toys",
             "count": 60,
-            "avgViews": 6653896.166666667
+            "avgViews": 6663071.7
+          },
+          {
+            "tag": "family",
+            "count": 60,
+            "avgViews": 6240323.7
+          },
+          {
+            "tag": "kids animation",
+            "count": 60,
+            "avgViews": 1767062.1833333333
+          },
+          {
+            "tag": "bluey disney junior",
+            "count": 60,
+            "avgViews": 663088.1
           },
           {
             "tag": "kids education",
             "count": 59,
-            "avgViews": 1771478.7457627119
+            "avgViews": 1780240.5084745763
           },
           {
             "tag": "fun",
             "count": 55,
-            "avgViews": 6507463.4363636365
+            "avgViews": 6515049.327272727
           },
           {
             "tag": "baby",
             "count": 54,
-            "avgViews": 2607999.203703704
+            "avgViews": 2611268.1296296297
           },
           {
             "tag": "kids videos",
             "count": 50,
-            "avgViews": 2250730.7
-          },
-          {
-            "tag": "songs",
-            "count": 48,
-            "avgViews": 880476.5
-          },
-          {
-            "tag": "songs for children",
-            "count": 48,
-            "avgViews": 880476.5
-          },
-          {
-            "tag": "blippi",
-            "count": 48,
-            "avgViews": 413549.0833333333
-          },
-          {
-            "tag": "kid songs",
-            "count": 48,
-            "avgViews": 1677988.8541666667
+            "avgViews": 2260826.82
           },
           {
             "tag": "youtube kids",
             "count": 48,
-            "avgViews": 3813419.0416666665
+            "avgViews": 3818202.4791666665
+          },
+          {
+            "tag": "songs",
+            "count": 48,
+            "avgViews": 883606.875
+          },
+          {
+            "tag": "songs for children",
+            "count": 48,
+            "avgViews": 883606.875
+          },
+          {
+            "tag": "blippi",
+            "count": 48,
+            "avgViews": 415339.1041666667
+          },
+          {
+            "tag": "kid songs",
+            "count": 48,
+            "avgViews": 1686956.1041666667
           },
           {
             "tag": "kids shorts",
             "count": 40,
-            "avgViews": 1111243.1
+            "avgViews": 1115432.475
           },
           {
             "tag": "kids playing",
             "count": 36,
-            "avgViews": 9552784.888888888
+            "avgViews": 9564596.583333334
           },
           {
             "tag": "kids stories",
             "count": 36,
-            "avgViews": 9682565.305555556
+            "avgViews": 9693936.444444444
           },
           {
             "tag": "kids songs",
             "count": 36,
-            "avgViews": 4869469.222222222
+            "avgViews": 4874777.333333333
           },
           {
             "tag": "kids video",
             "count": 35,
-            "avgViews": 1529412.8285714285
-          },
-          {
-            "tag": "shorts for kids",
-            "count": 33,
-            "avgViews": 1072464.2121212122
+            "avgViews": 1533194.5428571429
           },
           {
             "tag": "cartoons for kids",
             "count": 33,
-            "avgViews": 627622.0303030303
+            "avgViews": 631333.7272727273
+          },
+          {
+            "tag": "shorts for kids",
+            "count": 33,
+            "avgViews": 1076852.0909090908
           },
           {
             "tag": "patterns",
             "count": 33,
-            "avgViews": 3315938.1818181816
+            "avgViews": 3318435.9696969697
           },
           {
-            "tag": "video for kids",
+            "tag": "learn",
             "count": 33,
-            "avgViews": 10273009.909090908
+            "avgViews": 10149932.636363637
           }
         ]
       }
@@ -664,77 +874,77 @@
           {
             "tag": "kids challenge",
             "count": 6,
-            "avgViews": 12595078
+            "avgViews": 12612815
           },
           {
             "tag": "vlad and niki",
             "count": 27,
-            "avgViews": 12057167.074074075
+            "avgViews": 12070618.333333334
           },
           {
             "tag": "chris",
             "count": 27,
-            "avgViews": 12057167.074074075
+            "avgViews": 12070618.333333334
           },
           {
             "tag": "kids toys",
             "count": 32,
-            "avgViews": 10509458.5
+            "avgViews": 10521111.78125
           },
           {
             "tag": "video for kids",
             "count": 33,
-            "avgViews": 10273009.909090908
+            "avgViews": 10284512.212121213
           },
           {
             "tag": "learn",
             "count": 33,
-            "avgViews": 10138661.606060605
+            "avgViews": 10149932.636363637
           },
           {
             "tag": "kids stories",
             "count": 36,
-            "avgViews": 9682565.305555556
+            "avgViews": 9693936.444444444
           },
           {
             "tag": "kids playing",
             "count": 36,
-            "avgViews": 9552784.888888888
+            "avgViews": 9564596.583333334
           },
           {
             "tag": "cardboard",
             "count": 5,
-            "avgViews": 8622916.8
+            "avgViews": 8630234
           },
           {
             "tag": "adventure",
             "count": 5,
-            "avgViews": 8034059.8
+            "avgViews": 8045528
           },
           {
             "tag": "for kids",
             "count": 75,
-            "avgViews": 7822520.213333333
+            "avgViews": 7830971.68
           },
           {
             "tag": "toys",
             "count": 60,
-            "avgViews": 6653896.166666667
+            "avgViews": 6663071.7
           },
           {
             "tag": "fun",
             "count": 55,
-            "avgViews": 6507463.4363636365
+            "avgViews": 6515049.327272727
           },
           {
             "tag": "nastya",
             "count": 29,
-            "avgViews": 6241534.620689655
+            "avgViews": 6254786.0344827585
           },
           {
             "tag": "family",
             "count": 60,
-            "avgViews": 6232185.45
+            "avgViews": 6240323.7
           }
         ]
       }
@@ -751,14 +961,580 @@
       }
     },
     {
+      "patternType": "tags_popular",
+      "category": "educational",
+      "finding": "[educational] Top tags: \"blippi\" (48x), \"kids\" (34x), \"educational videos for kids\" (32x), \"toys\" (30x), \"blippi toys\" (30x), \"blippi videos\" (30x), \"blipi\" (30x), \"kids tv shows\" (30x), \"fun\" (26x), \"number blocks\" (24x).",
+      "confidence": 0.7,
+      "sampleSize": 77,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "blippi",
+            "count": 48
+          },
+          {
+            "tag": "kids",
+            "count": 34
+          },
+          {
+            "tag": "educational videos for kids",
+            "count": 32
+          },
+          {
+            "tag": "toys",
+            "count": 30
+          },
+          {
+            "tag": "blippi toys",
+            "count": 30
+          },
+          {
+            "tag": "blippi videos",
+            "count": 30
+          },
+          {
+            "tag": "blipi",
+            "count": 30
+          },
+          {
+            "tag": "kids tv shows",
+            "count": 30
+          },
+          {
+            "tag": "fun",
+            "count": 26
+          },
+          {
+            "tag": "number blocks",
+            "count": 24
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "animation",
+      "finding": "[animation] Top tags: \"bluey disney junior\" (54x), \"bluey\" (27x), \"bandit\" (27x), \"bingo\" (27x), \"dog\" (27x), \"pups\" (27x), \"puppy\" (27x), \"australian\" (27x), \"blue heeler\" (27x), \"wackadoo\" (27x).",
+      "confidence": 0.7,
+      "sampleSize": 49,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "bluey disney junior",
+            "count": 54
+          },
+          {
+            "tag": "bluey",
+            "count": 27
+          },
+          {
+            "tag": "bandit",
+            "count": 27
+          },
+          {
+            "tag": "bingo",
+            "count": 27
+          },
+          {
+            "tag": "dog",
+            "count": 27
+          },
+          {
+            "tag": "pups",
+            "count": 27
+          },
+          {
+            "tag": "puppy",
+            "count": 27
+          },
+          {
+            "tag": "australian",
+            "count": 27
+          },
+          {
+            "tag": "blue heeler",
+            "count": 27
+          },
+          {
+            "tag": "wackadoo",
+            "count": 27
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "song",
+      "finding": "[song] Top tags: \"nursery rhymes\" (68x), \"preschool\" (54x), \"kindergarten\" (51x), \"songs for kids\" (43x), \"kids animation\" (39x), \"kids education\" (39x), \"babies\" (34x), \"kids songs\" (33x), \"baby\" (31x), \"super simple songs\" (28x).",
+      "confidence": 0.7,
+      "sampleSize": 90,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "nursery rhymes",
+            "count": 68
+          },
+          {
+            "tag": "preschool",
+            "count": 54
+          },
+          {
+            "tag": "kindergarten",
+            "count": 51
+          },
+          {
+            "tag": "songs for kids",
+            "count": 43
+          },
+          {
+            "tag": "kids animation",
+            "count": 39
+          },
+          {
+            "tag": "kids education",
+            "count": 39
+          },
+          {
+            "tag": "babies",
+            "count": 34
+          },
+          {
+            "tag": "kids songs",
+            "count": 33
+          },
+          {
+            "tag": "baby",
+            "count": 31
+          },
+          {
+            "tag": "super simple songs",
+            "count": 28
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "story",
+      "finding": "[story] Top tags: \"for kids\" (24x), \"kids stories\" (24x), \"toys\" (23x), \"kids\" (22x), \"kids playing\" (22x), \"video for kids\" (22x), \"fun\" (22x), \"kids toys\" (22x), \"learn\" (22x), \"family\" (22x).",
+      "confidence": 0.7,
+      "sampleSize": 32,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "for kids",
+            "count": 24
+          },
+          {
+            "tag": "kids stories",
+            "count": 24
+          },
+          {
+            "tag": "toys",
+            "count": 23
+          },
+          {
+            "tag": "kids",
+            "count": 22
+          },
+          {
+            "tag": "kids playing",
+            "count": 22
+          },
+          {
+            "tag": "video for kids",
+            "count": 22
+          },
+          {
+            "tag": "fun",
+            "count": 22
+          },
+          {
+            "tag": "kids toys",
+            "count": 22
+          },
+          {
+            "tag": "learn",
+            "count": 22
+          },
+          {
+            "tag": "family",
+            "count": 22
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "challenge",
+      "finding": "[challenge] Top tags: \"cartoon\" (8x), \"nastya\" (6x), \"like nastya\" (6x), \"kids challenge\" (6x), \"for kids\" (6x), \"diana and roma\" (6x), \"roma and diana\" (6x), \"diana y roma\" (6x), \"diana roma\" (6x), \"diana\" (6x).",
+      "confidence": 0.7,
+      "sampleSize": 14,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "cartoon",
+            "count": 8
+          },
+          {
+            "tag": "nastya",
+            "count": 6
+          },
+          {
+            "tag": "like nastya",
+            "count": 6
+          },
+          {
+            "tag": "kids challenge",
+            "count": 6
+          },
+          {
+            "tag": "for kids",
+            "count": 6
+          },
+          {
+            "tag": "diana and roma",
+            "count": 6
+          },
+          {
+            "tag": "roma and diana",
+            "count": 6
+          },
+          {
+            "tag": "diana y roma",
+            "count": 6
+          },
+          {
+            "tag": "diana roma",
+            "count": 6
+          },
+          {
+            "tag": "diana",
+            "count": 6
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "roleplay",
+      "finding": "[roleplay] Top tags: \"kids playing\" (3x), \"cartoon\" (3x), \"nastya\" (2x), \"like nastya\" (2x), \"for kids\" (2x), \"family friendly\" (2x), \"nastya and friends\" (2x), \"nastya eng\" (2x), \"nastia\" (2x), \"kids videos\" (2x).",
+      "confidence": 0.7,
+      "sampleSize": 5,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "kids playing",
+            "count": 3
+          },
+          {
+            "tag": "cartoon",
+            "count": 3
+          },
+          {
+            "tag": "nastya",
+            "count": 2
+          },
+          {
+            "tag": "like nastya",
+            "count": 2
+          },
+          {
+            "tag": "for kids",
+            "count": 2
+          },
+          {
+            "tag": "family friendly",
+            "count": 2
+          },
+          {
+            "tag": "nastya and friends",
+            "count": 2
+          },
+          {
+            "tag": "nastya eng",
+            "count": 2
+          },
+          {
+            "tag": "nastia",
+            "count": 2
+          },
+          {
+            "tag": "kids videos",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "other",
+      "finding": "[other] Top tags: \"nastya\" (5x), \"like nastya\" (5x), \"infant\" (4x), \"sensory\" (4x), \"stimulation\" (4x), \"visual\" (4x), \"development\" (4x), \"sensory stimulation\" (4x), \"visual development\" (4x), \"sight\" (4x).",
+      "confidence": 0.7,
+      "sampleSize": 9,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "nastya",
+            "count": 5
+          },
+          {
+            "tag": "like nastya",
+            "count": 5
+          },
+          {
+            "tag": "infant",
+            "count": 4
+          },
+          {
+            "tag": "sensory",
+            "count": 4
+          },
+          {
+            "tag": "stimulation",
+            "count": 4
+          },
+          {
+            "tag": "visual",
+            "count": 4
+          },
+          {
+            "tag": "development",
+            "count": 4
+          },
+          {
+            "tag": "sensory stimulation",
+            "count": 4
+          },
+          {
+            "tag": "visual development",
+            "count": 4
+          },
+          {
+            "tag": "sight",
+            "count": 4
+          }
+        ]
+      }
+    },
+    {
+      "patternType": "tags_popular",
+      "category": "nursery_rhyme",
+      "finding": "[nursery_rhyme] Top tags: \"nursery rhymes\" (18x), \"songs for kids\" (16x), \"kids animation\" (16x), \"kids education\" (16x), \"babies\" (13x), \"cartoon carttoon\" (13x), \"family\" (13x), \"kids\" (13x), \"kids shorts\" (13x), \"kids video\" (13x).",
+      "confidence": 0.7,
+      "sampleSize": 18,
+      "metadata": {
+        "topTags": [
+          {
+            "tag": "nursery rhymes",
+            "count": 18
+          },
+          {
+            "tag": "songs for kids",
+            "count": 16
+          },
+          {
+            "tag": "kids animation",
+            "count": 16
+          },
+          {
+            "tag": "kids education",
+            "count": 16
+          },
+          {
+            "tag": "babies",
+            "count": 13
+          },
+          {
+            "tag": "cartoon carttoon",
+            "count": 13
+          },
+          {
+            "tag": "family",
+            "count": 13
+          },
+          {
+            "tag": "kids",
+            "count": 13
+          },
+          {
+            "tag": "kids shorts",
+            "count": 13
+          },
+          {
+            "tag": "kids video",
+            "count": 13
+          }
+        ]
+      }
+    },
+    {
       "patternType": "engagement_rate",
       "category": null,
       "finding": "Average engagement rate (likes+comments/views): 0.41% across 299 videos.",
       "confidence": 0.85,
       "sampleSize": 299,
       "metadata": {
-        "avgEngagementRate": 0.0041351205480751425
+        "avgEngagementRate": 0.004080892688759833
       }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "educational",
+      "finding": "[educational] Engagement rate: 0.49%, avg views: 2.1M (77 videos).",
+      "confidence": 0.75,
+      "sampleSize": 77,
+      "metadata": {
+        "engagementRate": 0.004941485041209404,
+        "avgViews": 2102979.1688311687
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "animation",
+      "finding": "[animation] Engagement rate: 0.51%, avg views: 1.0M (48 videos).",
+      "confidence": 0.75,
+      "sampleSize": 48,
+      "metadata": {
+        "engagementRate": 0.005113250458536466,
+        "avgViews": 1023496.9166666666
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "song",
+      "finding": "[song] Engagement rate: 0.33%, avg views: 3.5M (90 videos).",
+      "confidence": 0.75,
+      "sampleSize": 90,
+      "metadata": {
+        "engagementRate": 0.003337077704362406,
+        "avgViews": 3537725.5444444446
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "story",
+      "finding": "[story] Engagement rate: 0.13%, avg views: 7.9M (32 videos).",
+      "confidence": 0.75,
+      "sampleSize": 32,
+      "metadata": {
+        "engagementRate": 0.0013021568988269751,
+        "avgViews": 7882302.28125
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "challenge",
+      "finding": "[challenge] Engagement rate: 0.43%, avg views: 7.4M (15 videos).",
+      "confidence": 0.75,
+      "sampleSize": 15,
+      "metadata": {
+        "engagementRate": 0.004309563721382392,
+        "avgViews": 7433200.066666666
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "roleplay",
+      "finding": "[roleplay] Engagement rate: 0.32%, avg views: 3.0M (5 videos).",
+      "confidence": 0.75,
+      "sampleSize": 5,
+      "metadata": {
+        "engagementRate": 0.0032442591537742726,
+        "avgViews": 2975201.4
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "other",
+      "finding": "[other] Engagement rate: 0.61%, avg views: 3.3M (11 videos).",
+      "confidence": 0.75,
+      "sampleSize": 11,
+      "metadata": {
+        "engagementRate": 0.006084460000849095,
+        "avgViews": 3323658.727272727
+      }
+    },
+    {
+      "patternType": "engagement_rate",
+      "category": "nursery_rhyme",
+      "finding": "[nursery_rhyme] Engagement rate: 0.44%, avg views: 1.8M (18 videos).",
+      "confidence": 0.75,
+      "sampleSize": 18,
+      "metadata": {
+        "engagementRate": 0.004416721642074867,
+        "avgViews": 1798662.0555555555
+      }
+    }
+  ],
+  "uploadSchedule": [
+    {
+      "day": "Tuesday",
+      "hourUtc": 14,
+      "reason": "Tuesday at 14:00 UTC — Morning US Eastern / Afternoon Europe",
+      "expectedEngagementBoost": 1.38
+    },
+    {
+      "day": "Tuesday",
+      "hourUtc": 15,
+      "reason": "Tuesday at 15:00 UTC — After-school US Eastern",
+      "expectedEngagementBoost": 1.36
+    },
+    {
+      "day": "Wednesday",
+      "hourUtc": 14,
+      "reason": "Wednesday at 14:00 UTC — Morning US Eastern / Afternoon Europe",
+      "expectedEngagementBoost": 1.34
+    },
+    {
+      "day": "Wednesday",
+      "hourUtc": 15,
+      "reason": "Wednesday at 15:00 UTC — After-school US Eastern",
+      "expectedEngagementBoost": 1.32
+    },
+    {
+      "day": "Thursday",
+      "hourUtc": 14,
+      "reason": "Thursday at 14:00 UTC — Morning US Eastern / Afternoon Europe",
+      "expectedEngagementBoost": 1.32
+    }
+  ],
+  "titleRecommendations": [
+    {
+      "template": "Learn {TOPIC} with {CHARACTER}!",
+      "example": "Learn Counting with Cosmo!",
+      "reason": "Direct learning promise + character recognition",
+      "expectedCtrBoost": 1.3
+    },
+    {
+      "template": "Can You {ACTION}? | {TOPIC} for Kids",
+      "example": "Can You Count to 10? | Counting for Kids",
+      "reason": "Question format increases curiosity click-through",
+      "expectedCtrBoost": 1.25
+    },
+    {
+      "template": "{TOPIC} Song | {CHARACTER} Sings!",
+      "example": "Counting Song | Cosmo Sings!",
+      "reason": "Song format signals music content — high engagement for kids",
+      "expectedCtrBoost": 1.2
+    },
+    {
+      "template": "{NUMBER} Fun {TOPIC} for Kids!",
+      "example": "5 Fun Counting for Kids!",
+      "reason": "Numbers in titles attract 15% more clicks (analysis data)",
+      "expectedCtrBoost": 1.15
+    },
+    {
+      "template": "{CHARACTER}'s {TOPIC} Adventure",
+      "example": "Cosmo's Counting Adventure",
+      "reason": "Adventure framing creates excitement and series potential",
+      "expectedCtrBoost": 1.1
+    },
+    {
+      "template": "Include keywords: kids, super, songs, simple, bear",
+      "example": "Counting — kids super songs for Kids!",
+      "reason": "These words appear in top-performing titles (from 20 analyzed)",
+      "expectedCtrBoost": 1.1
     }
   ],
   "quotaUsed": 31
