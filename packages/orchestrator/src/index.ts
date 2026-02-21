@@ -15,3 +15,10 @@ export {
   type ReportJobData,
   type ScoreJobData,
 } from './jobs.js';
+export {
+  AnalyticsEngine,
+  type SummaryStats,
+  type VideoOverTime,
+  type QualityDistribution,
+  type SeriesProgress,
+} from './analytics.js';

@@ -1,6 +1,7 @@
 import express from 'express';
 import type { Logger } from '@kidsvid/shared';
 import type { QueueManager } from './queue.js';
+import type { AnalyticsEngine } from './analytics.js';
 import { JOB_NAMES } from './jobs.js';
 
 /** Express dashboard API for monitoring pipeline status, job history,
@@ -10,6 +11,7 @@ export function createDashboard(
   queueManager: QueueManager,
   logger: Logger,
   port = 3000,
+  analytics?: AnalyticsEngine,
 ) {
   const app = express();
   app.use(express.json());
@@ -173,6 +175,37 @@ export function createDashboard(
       ],
     });
   });
+
+  // ─── Analytics (if engine provided) ───
+
+  if (analytics) {
+    app.get('/api/analytics/summary', async (_req, res) => {
+      try { res.json(await analytics.getSummaryStats()); }
+      catch (err) { res.status(500).json({ error: String(err) }); }
+    });
+
+    app.get('/api/analytics/videos-over-time', async (req, res) => {
+      try {
+        const days = parseInt(req.query.days as string) || 30;
+        res.json(await analytics.getVideosOverTime(days));
+      } catch (err) { res.status(500).json({ error: String(err) }); }
+    });
+
+    app.get('/api/analytics/quality-distribution', async (_req, res) => {
+      try { res.json(await analytics.getQualityDistribution()); }
+      catch (err) { res.status(500).json({ error: String(err) }); }
+    });
+
+    app.get('/api/analytics/series-progress', async (_req, res) => {
+      try { res.json(await analytics.getSeriesProgress()); }
+      catch (err) { res.status(500).json({ error: String(err) }); }
+    });
+
+    app.get('/api/analytics/export', async (_req, res) => {
+      try { res.json(await analytics.exportAll()); }
+      catch (err) { res.status(500).json({ error: String(err) }); }
+    });
+  }
 
   const server = app.listen(port, () => {
     logger.info({ port }, 'Dashboard API running');
