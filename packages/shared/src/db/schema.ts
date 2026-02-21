@@ -148,6 +148,24 @@ export const characters = pgTable('characters', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
+// ─── Content Series ───
+
+export const contentSeries = pgTable('content_series', {
+  id: serial('id').primaryKey(),
+  seriesId: varchar('series_id', { length: 128 }).notNull().unique(),
+  name: varchar('name', { length: 256 }).notNull(),
+  description: text('description'),
+  educationalCategory: varchar('educational_category', { length: 64 }).notNull(),
+  ageBracket: varchar('age_bracket', { length: 16 }).notNull(),
+  characterIds: jsonb('character_ids').$type<number[]>().default([]),
+  totalEpisodes: integer('total_episodes').notNull(),
+  season: integer('season').default(1),
+  storyArc: text('story_arc'),
+  episodeOutlines: jsonb('episode_outlines').$type<Record<string, unknown>[]>().default([]),
+  playlistId: varchar('playlist_id', { length: 64 }),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
+
 // ─── Generated Content ───
 
 export const generatedVideos = pgTable('generated_videos', {
@@ -161,6 +179,8 @@ export const generatedVideos = pgTable('generated_videos', {
   targetAgeMax: integer('target_age_max'),
   characters: jsonb('characters').$type<number[]>().default([]),
   tags: jsonb('tags').$type<string[]>().default([]),
+  seriesId: varchar('series_id', { length: 128 }),
+  episodeNumber: integer('episode_number'),
   status: videoStatusEnum('status').default('draft'),
   // Media URLs
   thumbnailUrl: text('thumbnail_url'),

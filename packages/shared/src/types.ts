@@ -227,6 +227,73 @@ export interface StrategyEvaluation {
   sampleSize: number;
 }
 
+// ─── Series Types ───
+
+export interface SeriesDefinition {
+  id: string;
+  name: string;
+  description: string;
+  educationalCategory: EducationalCategory;
+  ageBracket: AgeBracket;
+  characterIds: number[];
+  totalEpisodes: number;
+  season: number;
+  storyArc: string;
+  episodeOutlines: EpisodeOutline[];
+  playlistId?: string;
+  createdAt?: string;
+}
+
+export interface EpisodeOutline {
+  episodeNumber: number;
+  title: string;
+  topic: string;
+  educationalObjective: string;
+  buildOn: string; // what previous episode taught
+  engagementHooks: EngagementHookType[];
+  targetDuration: number;
+}
+
+// ─── Thumbnail Types ───
+
+export interface ThumbnailSpec {
+  prompt: string;
+  style: string;
+  dominantColors: string[];
+  textOverlay?: string;
+  characterExpression: string;
+  composition: string;
+}
+
+export interface ThumbnailVariant {
+  id: string;
+  spec: ThumbnailSpec;
+  url: string;
+  isActive: boolean;
+  impressions: number;
+  clicks: number;
+  ctr: number;
+}
+
+// ─── Strategy Types ───
+
+export interface ContentGap {
+  category: ContentCategory;
+  topic: string;
+  demand: number; // search volume / competitor views
+  supply: number; // how many competitors cover it
+  opportunity: number; // demand / supply ratio
+  recommendation: string;
+}
+
+export interface GrowthProjection {
+  weeksOut: number;
+  projectedSubscribers: number;
+  projectedWeeklyViews: number;
+  projectedTotalViews: number;
+  confidence: number;
+}
+
 // ─── Kids Content Knowledge ───
 
 export const KIDS_CONTENT_RULES = {

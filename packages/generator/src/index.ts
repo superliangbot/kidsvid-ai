@@ -9,4 +9,13 @@ export {
   getHooksForCategory,
   type EpisodeTemplate,
 } from './templates/episode-structure.js';
+export {
+  SeriesGenerator,
+  SERIES_TEMPLATES,
+  type SeriesRequest,
+} from './series-generator.js';
+export {
+  ThumbnailIntelligence,
+  THUMBNAIL_PATTERNS,
+} from './thumbnail-intelligence.js';
 export * from './providers/index.js';
