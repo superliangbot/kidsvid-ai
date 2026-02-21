@@ -14,3 +14,10 @@ export {
   findViralOutliers,
   type EngagementStats,
 } from './engagement.js';
+export {
+  StrategyEngine,
+  type ChannelMetrics,
+  type CompetitivePosition,
+  type UploadRecommendation,
+  type TitleRecommendation,
+} from './strategy-engine.js';
