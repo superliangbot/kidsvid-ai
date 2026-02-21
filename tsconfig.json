@@ -1,0 +1,11 @@
+{
+  "references": [
+    { "path": "packages/shared" },
+    { "path": "packages/analyzer" },
+    { "path": "packages/generator" },
+    { "path": "packages/publisher" },
+    { "path": "packages/feedback" },
+    { "path": "packages/orchestrator" }
+  ],
+  "files": []
+}

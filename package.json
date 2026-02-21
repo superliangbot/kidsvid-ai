@@ -1,0 +1,46 @@
+{
+  "name": "kidsvid-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered YouTube Kids content engine",
+  "workspaces": [
+    "packages/shared",
+    "packages/analyzer",
+    "packages/generator",
+    "packages/publisher",
+    "packages/feedback",
+    "packages/orchestrator"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "rm -rf packages/*/dist",
+    "lint": "eslint 'packages/*/src/**/*.ts'",
+    "lint:fix": "eslint 'packages/*/src/**/*.ts' --fix",
+    "format": "prettier --write 'packages/*/src/**/*.ts'",
+    "format:check": "prettier --check 'packages/*/src/**/*.ts'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "analyze": "npm run start -w packages/analyzer",
+    "generate": "npm run start -w packages/generator",
+    "publish:videos": "npm run start -w packages/publisher",
+    "feedback": "npm run start -w packages/feedback",
+    "orchestrate": "npm run start -w packages/orchestrator",
+    "db:generate": "npm run db:generate -w packages/shared",
+    "db:migrate": "npm run db:migrate -w packages/shared",
+    "db:studio": "npm run db:studio -w packages/shared",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "typecheck": "tsc --noEmit -p packages/shared/tsconfig.json && tsc --noEmit -p packages/analyzer/tsconfig.json && tsc --noEmit -p packages/generator/tsconfig.json && tsc --noEmit -p packages/publisher/tsconfig.json && tsc --noEmit -p packages/feedback/tsconfig.json && tsc --noEmit -p packages/orchestrator/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
