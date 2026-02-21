@@ -1,6 +1,8 @@
 import type { VoiceProvider } from '@kidsvid/shared';
+import { GoogleGenAI } from '@google/genai';
 
-/** OpenAI TTS voice IDs suitable for kids content */
+// ─── OpenAI TTS (Default) ───
+
 export const OPENAI_VOICES = [
   { id: 'alloy', name: 'Alloy', description: 'Neutral, warm' },
   { id: 'echo', name: 'Echo', description: 'Calm, clear' },
@@ -67,12 +69,9 @@ export class OpenAITTSProvider implements VoiceProvider {
     }
 
     // The API returns raw audio bytes. In production, pipe to storage (S3/GCS).
-    // For now, consume the response and return metadata.
     const audioBuffer = await response.arrayBuffer();
     const estimatedDuration = estimateSpeechDuration(text, this.speed);
 
-    // In production, upload audioBuffer to cloud storage and return the URL.
-    // For development, write to a temp file or return a data reference.
     return {
       audioUrl: `openai-tts://${voice}/${this.model}/${Date.now()}.${this.responseFormat}`,
       duration: estimatedDuration,
@@ -125,7 +124,86 @@ export class OpenAITTSProvider implements VoiceProvider {
   }
 }
 
-/** Mock provider for development and testing */
+// ─── Google Gemini TTS ───
+
+export interface GeminiTTSOptions {
+  apiKey: string;
+  model?: string;
+  voiceName?: string;
+}
+
+/** Google Gemini TTS voice generation provider.
+ * Uses the Gemini API with audio output modality for text-to-speech. */
+export class GeminiTTSProvider implements VoiceProvider {
+  private client: GoogleGenAI;
+  private model: string;
+  private voiceName: string;
+
+  constructor(options: GeminiTTSOptions) {
+    this.client = new GoogleGenAI({ apiKey: options.apiKey });
+    this.model = options.model ?? 'gemini-2.5-flash';
+    this.voiceName = options.voiceName ?? 'Kore';
+  }
+
+  async generate(
+    text: string,
+    voiceId?: string,
+  ): Promise<{ audioUrl: string; duration: number }> {
+    const voice = voiceId || this.voiceName;
+
+    const response = await this.client.models.generateContent({
+      model: this.model,
+      contents: `Read this text aloud in a friendly, child-appropriate voice suitable for kids ages 2-8: ${text}`,
+      config: {
+        responseModalities: ['audio'],
+        speechConfig: {
+          voiceConfig: {
+            prebuiltVoiceConfig: {
+              voiceName: voice,
+            },
+          },
+        },
+      },
+    });
+
+    const parts = response.candidates?.[0]?.content?.parts;
+    if (!parts || parts.length === 0) {
+      throw new Error('Gemini TTS returned no audio content');
+    }
+
+    const audioPart = parts.find((p: Record<string, unknown>) => p.inlineData);
+    if (!audioPart || !audioPart.inlineData) {
+      throw new Error('Gemini TTS response contains no audio data');
+    }
+
+    const estimatedDuration = estimateSpeechDuration(text);
+
+    return {
+      audioUrl: `gemini-tts://${voice}/${this.model}/${Date.now()}.wav`,
+      duration: estimatedDuration,
+    };
+  }
+
+  async listVoices(): Promise<{ id: string; name: string; preview: string }[]> {
+    return GEMINI_VOICES.map((v) => ({
+      id: v.id,
+      name: `${v.name} — ${v.description}`,
+      preview: '',
+    }));
+  }
+}
+
+export const GEMINI_VOICES = [
+  { id: 'Kore', name: 'Kore', description: 'Bright, energetic' },
+  { id: 'Puck', name: 'Puck', description: 'Playful, upbeat' },
+  { id: 'Charon', name: 'Charon', description: 'Calm, warm' },
+  { id: 'Fenrir', name: 'Fenrir', description: 'Expressive, deep' },
+  { id: 'Aoede', name: 'Aoede', description: 'Soft, gentle' },
+  { id: 'Leda', name: 'Leda', description: 'Clear, friendly' },
+] as const;
+
+// ─── Mock ───
+
 export class MockVoiceProvider implements VoiceProvider {
   async generate(
     text: string,
@@ -146,6 +224,24 @@ export class MockVoiceProvider implements VoiceProvider {
   }
 }
 
+// ─── Factory ───
+
+export type VoiceProviderName = 'openai' | 'gemini';
+
+export function createVoiceProvider(
+  provider: VoiceProviderName,
+  apiKey: string,
+): VoiceProvider {
+  switch (provider) {
+    case 'openai':
+      return new OpenAITTSProvider({ apiKey });
+    case 'gemini':
+      return new GeminiTTSProvider({ apiKey });
+    default:
+      throw new Error(`Unknown voice provider: ${provider}`);
+  }
+}
+
 /** Recommended voice mappings for different character types */
 export const CHARACTER_VOICE_MAP: Record<string, OpenAIVoiceId> = {
   narrator: 'nova',
@@ -156,7 +252,7 @@ export const CHARACTER_VOICE_MAP: Record<string, OpenAIVoiceId> = {
   'Pixel & Dot': 'echo',
 };
 
-function estimateSpeechDuration(text: string, speed = 1.0): number {
+export function estimateSpeechDuration(text: string, speed = 1.0): number {
   // Average speaking rate: ~150 words per minute for kids content (slower pace)
   const words = text.split(/\s+/).length;
   return Math.round((words / 150) * 60 / speed);
