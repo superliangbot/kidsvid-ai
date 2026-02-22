@@ -1,0 +1,145 @@
+{
+  "title": "🤖 Count to 10 with Building Blocks! 🧱 Cosmo's Counting Fun for Kids",
+  "description": "Join Cosmo the friendly blue robot as he builds a colorful tower while counting from 1 to 10! Perfect for toddlers and preschoolers learning numbers. Fun, educational content that makes learning to count exciting with bright building blocks!",
+  "tags": [
+    "counting",
+    "numbers",
+    "building blocks",
+    "toddlers",
+    "preschool",
+    "educational",
+    "kids learning",
+    "counting to 10",
+    "robot",
+    "cosmo",
+    "children's education",
+    "early learning",
+    "math for kids",
+    "number recognition",
+    "counting songs",
+    "learning videos",
+    "kids math",
+    "educational toys",
+    "counting blocks",
+    "super builders"
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "phase": "intro",
+      "blockCount": 0,
+      "spatialLayout": "",
+      "numberOnScreen": null,
+      "narration": "Hi friends! I'm Cosmo! Today we're going to count from 1 all the way to 10 using these amazing colorful blocks! Are you ready to build and count with me?",
+      "durationSec": 15
+    },
+    {
+      "id": "count_1",
+      "phase": "count",
+      "blockCount": 1,
+      "spatialLayout": "Single block on the ground: RED block",
+      "numberOnScreen": 1,
+      "narration": "Let's start! Here's our first block - ONE red block! Can you say ONE? ONE!",
+      "durationSec": 12
+    },
+    {
+      "id": "count_2",
+      "phase": "count",
+      "blockCount": 2,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE",
+      "numberOnScreen": 2,
+      "narration": "Now I'll add another block on top! Count with me - ONE, TWO! We have TWO blocks! TWO!",
+      "durationSec": 14
+    },
+    {
+      "id": "count_3",
+      "phase": "count",
+      "blockCount": 3,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW",
+      "numberOnScreen": 3,
+      "narration": "Here comes a yellow block! ONE, TWO, THREE! We have THREE blocks now! Can you count THREE? THREE!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_4",
+      "phase": "count",
+      "blockCount": 4,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN",
+      "numberOnScreen": 4,
+      "narration": "A green block joins our tower! Let's count together - ONE, TWO, THREE, FOUR! We have FOUR blocks! FOUR!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_5",
+      "phase": "count",
+      "blockCount": 5,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE",
+      "numberOnScreen": 5,
+      "narration": "Here's a beautiful blue block! ONE, TWO, THREE, FOUR, FIVE! Our tower has FIVE blocks! FIVE!",
+      "durationSec": 16
+    },
+    {
+      "id": "midpoint",
+      "phase": "midpoint",
+      "blockCount": 5,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE",
+      "numberOnScreen": null,
+      "narration": "Wow! Look at our colorful tower! We've counted to FIVE! Let's count them all together one more time - ONE, TWO, THREE, FOUR, FIVE! Great job!",
+      "durationSec": 15
+    },
+    {
+      "id": "count_6",
+      "phase": "fullcount",
+      "blockCount": 6,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE",
+      "numberOnScreen": 6,
+      "narration": "Let's keep building! Here's a purple block! ONE, TWO, THREE, FOUR, FIVE, SIX! We have SIX blocks! SIX!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_7",
+      "phase": "fullcount",
+      "blockCount": 7,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE, 7th block PINK",
+      "numberOnScreen": 7,
+      "narration": "A pink block makes our tower taller! ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN! Count with me - SEVEN! SEVEN!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_8",
+      "phase": "fullcount",
+      "blockCount": 8,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE, 7th block PINK, 8th block WHITE",
+      "numberOnScreen": 8,
+      "narration": "Here comes a white block! Let's count - ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT! We have EIGHT blocks! EIGHT!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_9",
+      "phase": "fullcount",
+      "blockCount": 9,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE, 7th block PINK, 8th block WHITE, 9th block BLACK",
+      "numberOnScreen": 9,
+      "narration": "Almost there! A black block joins us! ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE! That's NINE blocks! NINE!",
+      "durationSec": 16
+    },
+    {
+      "id": "count_10",
+      "phase": "fullcount",
+      "blockCount": 10,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE, 7th block PINK, 8th block WHITE, 9th block BLACK, 10th block GOLD",
+      "numberOnScreen": 10,
+      "narration": "Here's our final golden block! Let's count our amazing tower - ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN! TEN blocks! TEN!",
+      "durationSec": 18
+    },
+    {
+      "id": "celebration",
+      "phase": "celebration",
+      "blockCount": 10,
+      "spatialLayout": "Tower from bottom to top: 1st block RED, 2nd block ORANGE, 3rd block YELLOW, 4th block GREEN, 5th block BLUE, 6th block PURPLE, 7th block PINK, 8th block WHITE, 9th block BLACK, 10th block GOLD",
+      "numberOnScreen": null,
+      "narration": "YOU DID IT! We counted all the way to TEN! What an amazing colorful tower we built together! You're such great builders and counters! Don't forget to like this video and subscribe for more counting fun with Cosmo!",
+      "durationSec": 20
+    }
+  ]
+}

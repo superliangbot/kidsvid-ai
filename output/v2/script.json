@@ -1,0 +1,297 @@
+{
+  "title": "🔢 Counting 1-10 with Building Blocks! 🤖 Kids Learning Numbers",
+  "description": "Join Cosmo the robot as we count from 1 to 10 using colorful building blocks! Perfect for toddlers and preschoolers learning numbers. Watch as we build a tower together and celebrate counting success! 🌈✨",
+  "tags": [
+    "counting",
+    "numbers",
+    "kids learning",
+    "toddlers",
+    "preschool",
+    "building blocks",
+    "educational",
+    "children",
+    "math",
+    "1 to 10",
+    "learning numbers",
+    "early learning",
+    "robot",
+    "cosmo",
+    "super builders",
+    "counting song",
+    "educational videos",
+    "kids math",
+    "number recognition",
+    "learning fun"
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "phase": "intro",
+      "blockCount": 0,
+      "blockColors": [],
+      "numberOnScreen": null,
+      "imagePrompt": "A friendly blue robot named Cosmo with big round glowing eyes and a cheerful expression, waving with one robotic hand. Cosmo stands in a bright colorful playroom with rainbow walls. Empty building surface in front of him. Sparkly background with musical notes floating around.",
+      "videoPrompt": "Cosmo waves enthusiastically with both arms, his eyes light up and blink happily. Musical notes and sparkles dance around him. Camera gently zooms in on his friendly face.",
+      "narration": "Hi there, super builders! I'm Cosmo, and today we're going to count from 1 to 10 using building blocks! Are you ready? Let's build and count together!",
+      "durationSec": 10
+    },
+    {
+      "id": "count_1",
+      "phase": "count",
+      "blockCount": 1,
+      "blockColors": [
+        "red"
+      ],
+      "numberOnScreen": "1",
+      "imagePrompt": "Cosmo the blue robot placing a single red building block on the building surface. Large number '1' displayed prominently on screen in bright yellow. Cosmo points at the red block with excitement. Colorful playroom background.",
+      "videoPrompt": "Cosmo carefully picks up and places the red block down. The number '1' appears with a gentle bounce animation. Cosmo points at the block and nods approvingly.",
+      "narration": "Here's our first block! One! One red block. Can you say ONE? One, one, ONE!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_2",
+      "phase": "count",
+      "blockCount": 2,
+      "blockColors": [
+        "red",
+        "orange"
+      ],
+      "numberOnScreen": "2",
+      "imagePrompt": "Cosmo placing an orange block on top of the red block, creating a 2-block tower. Large number '2' on screen in bright yellow. Cosmo's arms are positioned as if just placing the orange block. Red block on bottom, orange on top.",
+      "videoPrompt": "Cosmo lifts and carefully stacks the orange block on the red one. The number changes from '1' to '2' with a bounce. Cosmo claps his hands together once in satisfaction.",
+      "narration": "Now we add another block! Two! Two blocks - red and orange. Let's count: One, two! Can you count with me? Two, two, TWO!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_3",
+      "phase": "count",
+      "blockCount": 3,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "numberOnScreen": "3",
+      "imagePrompt": "3-block tower with red on bottom, orange in middle, yellow on top. Cosmo pointing at the tower with both hands, looking excited. Large number '3' displayed on screen in bright yellow. Colorful background.",
+      "videoPrompt": "Cosmo places the yellow block on top. Number '3' bounces onto screen. Cosmo counts by pointing at each block from bottom to top, nodding with each count.",
+      "narration": "Here comes number three! Three blocks now! Red, orange, yellow. Let's count together: One, two, three! Three, three, THREE!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_4",
+      "phase": "count",
+      "blockCount": 4,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green"
+      ],
+      "numberOnScreen": "4",
+      "imagePrompt": "4-block tower: red, orange, yellow, green from bottom to top. Cosmo with arms spread wide showing pride in the growing tower. Large number '4' on screen. The tower is getting taller and more impressive.",
+      "videoPrompt": "Cosmo adds the green block to the tower. Number '4' appears with sparkles. Cosmo does a little happy dance and points to each block in the tower.",
+      "narration": "Four blocks high! Four! Our tower is growing! Red, orange, yellow, green makes four! Count with me: One, two, three, four! Four, four, FOUR!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_5",
+      "phase": "count",
+      "blockCount": 5,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "numberOnScreen": "5",
+      "imagePrompt": "5-block tower: red, orange, yellow, green, blue from bottom to top. Cosmo giving thumbs up with both robotic hands. Large number '5' prominently displayed. The tower is now half complete and looking impressive.",
+      "videoPrompt": "Cosmo places the blue block on top. Number '5' bounces in with celebration sparkles. Cosmo gives double thumbs up and his eyes light up brightly.",
+      "narration": "Five blocks! Five! Look how tall our tower is getting! We're halfway to ten! Five blocks: one, two, three, four, five! Five, five, FIVE!",
+      "durationSec": 8
+    },
+    {
+      "id": "midpoint",
+      "phase": "midpoint",
+      "blockCount": 5,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "numberOnScreen": "1-5",
+      "imagePrompt": "The 5-block tower (red, orange, yellow, green, blue) with Cosmo gesturing towards it. Numbers 1, 2, 3, 4, 5 appear floating above each block. Cosmo looks encouraging and excited, with both arms spread toward the tower.",
+      "videoPrompt": "Numbers 1-5 appear above each corresponding block with a magical shimmer. Cosmo points to each block as he counts, creating a counting rhythm. Gentle sparkles surround the tower.",
+      "narration": "Great job! Let's count all our blocks so far! One, two, three, four, five! Fantastic! Now let's keep building to reach ten!",
+      "durationSec": 10
+    },
+    {
+      "id": "count_6",
+      "phase": "count",
+      "blockCount": 6,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "numberOnScreen": "6",
+      "imagePrompt": "6-block tower with purple block on top. Red, orange, yellow, green, blue, purple from bottom to top. Cosmo reaching up to place or having just placed the purple block. Large number '6' on screen.",
+      "videoPrompt": "Cosmo stretches up to place the purple block on the growing tower. Number '6' appears with a bounce. Cosmo has to reach higher now, showing the tower's impressive height.",
+      "narration": "Six blocks! Six! Our tower is getting so tall! Purple makes six! Let's count: one, two, three, four, five, six! Six, six, SIX!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_7",
+      "phase": "count",
+      "blockCount": 7,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "numberOnScreen": "7",
+      "imagePrompt": "7-block tower with pink block on top. Full tower: red, orange, yellow, green, blue, purple, pink from bottom to top. Cosmo looking up at the tall tower with amazement. Number '7' displayed prominently.",
+      "videoPrompt": "Cosmo carefully places the pink block, having to reach even higher. Number '7' appears with sparkles. Cosmo steps back to admire the tall tower, hands on his robotic hips.",
+      "narration": "Seven blocks high! Seven! Look how tall we've built! Pink makes seven blocks! Count with me: one, two, three, four, five, six, seven! Seven, seven, SEVEN!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_8",
+      "phase": "count",
+      "blockCount": 8,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan"
+      ],
+      "numberOnScreen": "8",
+      "imagePrompt": "8-block tower topped with cyan block. Complete tower: red, orange, yellow, green, blue, purple, pink, cyan. Cosmo standing proudly next to the very tall tower. Large number '8' on screen.",
+      "videoPrompt": "Cosmo stretches up high to place the cyan block. Number '8' bounces in with excitement effects. Cosmo wipes his robotic brow as if the building is getting challenging but fun.",
+      "narration": "Eight blocks! Eight! We're almost at ten! Cyan makes eight! This tower is amazing! One, two, three, four, five, six, seven, eight! Eight, eight, EIGHT!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_9",
+      "phase": "count",
+      "blockCount": 9,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan",
+        "white"
+      ],
+      "numberOnScreen": "9",
+      "imagePrompt": "9-block tower with white block on top. Tower: red, orange, yellow, green, blue, purple, pink, cyan, white. Cosmo reaching up excitedly, almost at the final block. Number '9' prominently displayed.",
+      "videoPrompt": "Cosmo places the white block with great care and excitement. Number '9' appears with anticipation sparkles. Cosmo's eyes light up brightly knowing they're almost done.",
+      "narration": "Nine blocks! Nine! Just one more to go! White makes nine! We're so close to ten! One, two, three, four, five, six, seven, eight, nine! Nine, nine, NINE!",
+      "durationSec": 8
+    },
+    {
+      "id": "count_10",
+      "phase": "count",
+      "blockCount": 10,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan",
+        "white",
+        "gold"
+      ],
+      "numberOnScreen": "10",
+      "imagePrompt": "Complete 10-block tower with golden block on top. Full rainbow tower: red, orange, yellow, green, blue, purple, pink, cyan, white, gold. Cosmo with arms raised in triumph. Large glittering number '10' on screen.",
+      "videoPrompt": "Cosmo places the final gold block with ceremony. Number '10' appears with golden sparkles and fanfare effects. Cosmo raises both arms in victory and does a little celebration dance.",
+      "narration": "TEN! Ten blocks! We did it! The golden block makes ten! Our rainbow tower is complete! Ten, ten, TEN!",
+      "durationSec": 8
+    },
+    {
+      "id": "fullcount",
+      "phase": "fullcount",
+      "blockCount": 10,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan",
+        "white",
+        "gold"
+      ],
+      "numberOnScreen": "1-10",
+      "imagePrompt": "The complete 10-block rainbow tower with numbers 1-10 floating beside each block. Cosmo pointing enthusiastically at the tower. All numbers 1 through 10 visible on screen. Magical sparkles around the tower.",
+      "videoPrompt": "Numbers 1-10 appear beside each block with magical effects. Cosmo points to each block as they count together. Rainbow sparkles cascade down the tower.",
+      "narration": "Let's count our whole tower together! One, two, three, four, five, six, seven, eight, nine, TEN! We counted all the way to ten!",
+      "durationSec": 10
+    },
+    {
+      "id": "celebration",
+      "phase": "celebration",
+      "blockCount": 10,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan",
+        "white",
+        "gold"
+      ],
+      "numberOnScreen": null,
+      "imagePrompt": "Cosmo dancing joyfully next to the complete 10-block rainbow tower. Colorful confetti falling from above. Cosmo's eyes are bright and he has both arms up celebrating. Rainbow sparkles and party effects everywhere.",
+      "videoPrompt": "Confetti and sparkles fall from the sky. Cosmo dances happily, spinning around. The tower sparkles with rainbow effects. Camera zooms out to show the full celebration scene.",
+      "narration": "You did it, super builders! We counted from one all the way to ten and built an amazing rainbow tower! You're fantastic at counting!",
+      "durationSec": 8
+    },
+    {
+      "id": "outro",
+      "phase": "outro",
+      "blockCount": 10,
+      "blockColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "cyan",
+        "white",
+        "gold"
+      ],
+      "numberOnScreen": null,
+      "imagePrompt": "Cosmo waving goodbye with both hands, smiling warmly. The complete rainbow tower stands proudly beside him. Subscribe button and bell icon visible on screen. Gentle sparkles in the background.",
+      "videoPrompt": "Cosmo waves goodbye enthusiastically. Subscribe button pulses gently. The tower stands as a monument to their counting success. Soft sparkles continue to float around the scene.",
+      "narration": "Thanks for counting with me today! Don't forget to subscribe for more building and counting fun! Keep practicing your numbers, super builders! Bye bye!",
+      "durationSec": 8
+    }
+  ]
+}

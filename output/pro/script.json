@@ -1,0 +1,175 @@
+{
+  "title": "Learn to Count 1-10 with Building Blocks! 🤖🧱 Cosmo's Counting Tower",
+  "description": "Join Cosmo the friendly blue robot as he builds a counting tower from 1 to 10! Perfect for toddlers learning numbers. Interactive counting fun with colorful building blocks. Subscribe to Super Builders for more educational adventures! #counting #numbers #toddlers #preschool #buildingblocks",
+  "tags": [
+    "counting",
+    "numbers 1-10",
+    "toddler learning",
+    "preschool education",
+    "building blocks",
+    "educational video",
+    "kids counting",
+    "learn numbers",
+    "cosmo robot",
+    "super builders",
+    "interactive learning",
+    "early childhood",
+    "math for kids",
+    "counting song",
+    "educational content"
+  ],
+  "scenes": [
+    {
+      "id": "intro_1",
+      "phase": "intro",
+      "visual": "Colorful building blocks falling from the sky in slow motion, bouncing playfully. Bright rainbow background with sparkles.",
+      "narration": "WOW! Look at all these amazing blocks!",
+      "durationSec": 3,
+      "notes": "Hook attention immediately with visual excitement and Cosmo's enthusiastic voice"
+    },
+    {
+      "id": "intro_2",
+      "phase": "intro",
+      "visual": "Cosmo the blue robot appears with a big wave, spinning around excitedly. Logo 'Super Builders' appears with building block letters.",
+      "narration": "Hi there, super builders! It's me, Cosmo! Ready to build something SUPER cool today?",
+      "durationSec": 8,
+      "notes": "Theme song snippet plays. Cosmo should feel warm and welcoming"
+    },
+    {
+      "id": "warmup_1",
+      "phase": "warmup",
+      "visual": "Cosmo stands next to a pile of 10 colorful building blocks (red, blue, yellow, green, orange, purple). Clean white background.",
+      "narration": "Today we're going to learn to count from 1 to 10! And we'll build the tallest counting tower EVER! Are you ready to count with me?",
+      "durationSec": 10,
+      "notes": "Pause after question for imaginary response. Cosmo should bounce with excitement"
+    },
+    {
+      "id": "teach_1",
+      "phase": "teach",
+      "visual": "Close-up of Cosmo picking up ONE red block, holding it up prominently. Number '1' appears on screen in big, colorful font.",
+      "narration": "Let's start! Here's ONE block. ONE! Can you say ONE? One, one, ONE! Great job!",
+      "durationSec": 8,
+      "notes": "Emphasize the word ONE each time. Sound effect when number appears on screen"
+    },
+    {
+      "id": "teach_2",
+      "phase": "teach",
+      "visual": "Cosmo places the red block down, then picks up a blue block. TWO blocks now visible. Number '2' appears.",
+      "narration": "Now I'll add another block! That makes TWO blocks! TWO! Say it with me - TWO, two, TWO!",
+      "durationSec": 8,
+      "notes": "Point to both blocks when saying TWO. Cheerful ding sound effect"
+    },
+    {
+      "id": "teach_3",
+      "phase": "teach",
+      "visual": "Cosmo adds a yellow block on top. THREE blocks stacked. Number '3' appears with sparkles.",
+      "narration": "Here comes THREE! One, two, THREE! Can you count with me? One, two, THREE! Awesome counting!",
+      "durationSec": 10,
+      "notes": "Count slowly, pointing to each block. Pause for kids to count along"
+    },
+    {
+      "id": "teach_4",
+      "phase": "teach",
+      "visual": "Green block added to tower. FOUR blocks high now. Number '4' bounces onto screen.",
+      "narration": "Look how tall we're getting! That's FOUR blocks! FOUR! Let's count them all: one, two, three, FOUR!",
+      "durationSec": 10,
+      "notes": "Tower is getting impressive. Cosmo shows excitement about height"
+    },
+    {
+      "id": "teach_5",
+      "phase": "teach",
+      "visual": "Orange block placed carefully on top. FIVE blocks tower. Big '5' with celebration confetti effect.",
+      "narration": "We made it to FIVE! High five! One, two, three, four, FIVE! You're such a great counter!",
+      "durationSec": 10,
+      "notes": "Cosmo gives a high five gesture. Celebration sound effect for reaching 5"
+    },
+    {
+      "id": "practice_1",
+      "phase": "practice",
+      "visual": "Cosmo steps back from the 5-block tower, gesturing toward it with both hands encouragingly.",
+      "narration": "Now YOU try! Can you count our blocks from one to five? I'll help you! Ready? One, two, three, four, FIVE! You did it!",
+      "durationSec": 12,
+      "notes": "Leave pauses for children to count. Cosmo nods encouragingly during pauses"
+    },
+    {
+      "id": "teach_6",
+      "phase": "teach",
+      "visual": "Purple block added to tower. SIX blocks high. Number '6' slides in from the left.",
+      "narration": "Let's keep building! Here's SIX! Our tower is getting so tall! SIX! Say SIX with me! Six, six, SIX!",
+      "durationSec": 10,
+      "notes": "Emphasize how tall the tower is getting. Cosmo looks up at it in amazement"
+    },
+    {
+      "id": "teach_7",
+      "phase": "teach",
+      "visual": "Pink block carefully balanced on top. SEVEN blocks total. Number '7' appears with a whoosh sound.",
+      "narration": "Wow! SEVEN blocks! I need to be very careful now! SEVEN! Can you say SEVEN? Seven, seven, SEVEN! Perfect!",
+      "durationSec": 10,
+      "notes": "Cosmo shows concentration while placing block. Tower is impressively tall now"
+    },
+    {
+      "id": "teach_8",
+      "phase": "teach",
+      "visual": "Turquoise block added with extra care. EIGHT blocks high. Number '8' spins onto screen.",
+      "narration": "EIGHT blocks! Look how high we've built! EIGHT! That's a lot of blocks! Say EIGHT! Eight, eight, EIGHT!",
+      "durationSec": 10,
+      "notes": "Show the full tower height compared to Cosmo. Building tension for the final blocks"
+    },
+    {
+      "id": "teach_9",
+      "phase": "teach",
+      "visual": "Lime green block placed delicately on top. NINE blocks total. Number '9' appears with anticipation music.",
+      "narration": "Almost there! NINE blocks! We're so close to ten! NINE! Count with me - NINE, nine, NINE! One more to go!",
+      "durationSec": 10,
+      "notes": "Build excitement and anticipation. Tower should look very tall and impressive"
+    },
+    {
+      "id": "teach_10",
+      "phase": "teach",
+      "visual": "Final white block placed on top with great care. TEN blocks complete! Huge '10' appears with fireworks effect.",
+      "narration": "TEN! We did it! TEN amazing blocks! Our counting tower is complete! TEN! Say TEN! Ten, ten, TEN! Yahoo!",
+      "durationSec": 12,
+      "notes": "Major celebration! Confetti, cheering sounds. This is the big moment!"
+    },
+    {
+      "id": "full_count",
+      "phase": "practice",
+      "visual": "Camera slowly pans up the entire 10-block tower as Cosmo counts, pointing to each block.",
+      "narration": "Now let's count ALL our blocks together! One, two, three, four, five, six, seven, eight, nine, TEN! Amazing job, super builder!",
+      "durationSec": 15,
+      "notes": "Count slowly and clearly. Each number appears briefly as Cosmo points to that block"
+    },
+    {
+      "id": "review_1",
+      "phase": "review",
+      "visual": "Cosmo points to the bottom 3 blocks of the tower, looking at the camera questioningly.",
+      "narration": "Let's play a game! How many blocks am I pointing to? One, two, THREE! You got it right!",
+      "durationSec": 8,
+      "notes": "Quick quiz moment. Cosmo should look encouraging and supportive"
+    },
+    {
+      "id": "review_2",
+      "phase": "review",
+      "visual": "Cosmo gestures to the top 5 blocks of the tower, with a big smile.",
+      "narration": "How about these blocks up here? Let's count! One, two, three, four, FIVE! You're so smart!",
+      "durationSec": 8,
+      "notes": "Another quick practice. Keep it fun and not too challenging"
+    },
+    {
+      "id": "celebration",
+      "phase": "celebration",
+      "visual": "Cosmo dancing happily next to the completed 10-block tower. Confetti and stars falling around them.",
+      "narration": "We built the most amazing counting tower! You learned to count from one to ten! I'm so proud of you, super builder!",
+      "durationSec": 10,
+      "notes": "Full celebration mode. Happy music, lots of visual effects. Make child feel accomplished"
+    },
+    {
+      "id": "outro",
+      "phase": "outro",
+      "visual": "Cosmo waves goodbye with the tower still standing proudly. Subscribe button animation appears. Preview of next video shows briefly.",
+      "narration": "Thanks for counting with me today! Don't forget to subscribe for more building fun! Next time, we'll build a rainbow bridge! See you soon, super builders! Bye bye!",
+      "durationSec": 12,
+      "notes": "Warm goodbye. Subscribe animation should be child-friendly. End on upbeat note"
+    }
+  ]
+}

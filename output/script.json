@@ -1,0 +1,44 @@
+{
+  "title": "🤖 Cosmo Builds & Counts to 5! 🔢🏗️ Super Builders Kids Math",
+  "description": "Join Cosmo the robot as he builds colorful towers and counts from 1 to 5! Perfect for toddlers learning numbers, colors, and building. Fun educational content for ages 2-5! #counting #math #preschool #building #kids",
+  "tags": [
+    "counting",
+    "numbers",
+    "math",
+    "preschool",
+    "toddlers",
+    "building",
+    "robot",
+    "colors",
+    "educational",
+    "kids learning"
+  ],
+  "narration": "Hi friends, I'm Cosmo! Today we're building towers and counting together! Let's start with one red block. Now two! One red, two yellow blocks. Three blocks! Red, yellow, green! Four colorful blocks! Red, yellow, green, and blue! And five blocks total! Red, yellow, green, blue, and purple! We built a rainbow tower and counted to five! Great job counting with me, super builders!",
+  "scenes": [
+    {
+      "description": "Cosmo the friendly blue robot waves hello in a bright construction zone with colorful building blocks scattered around",
+      "narration": "Hi friends, I'm Cosmo! Today we're building towers and counting together!",
+      "durationSec": 8
+    },
+    {
+      "description": "Cosmo places one red block down, then adds a yellow block on top, pointing to each one",
+      "narration": "Let's start with one red block. Now two! One red, two yellow blocks.",
+      "durationSec": 10
+    },
+    {
+      "description": "Cosmo adds a green block, then a blue block, counting each one with animated numbers appearing",
+      "narration": "Three blocks! Red, yellow, green! Four colorful blocks! Red, yellow, green, and blue!",
+      "durationSec": 12
+    },
+    {
+      "description": "Cosmo places the final purple block on top, creating a tall rainbow tower while counting all five blocks",
+      "narration": "And five blocks total! Red, yellow, green, blue, and purple! We built a rainbow tower and counted to five!",
+      "durationSec": 12
+    },
+    {
+      "description": "Cosmo celebrates next to the completed colorful tower with sparkles and confetti, giving thumbs up",
+      "narration": "Great job counting with me, super builders!",
+      "durationSec": 8
+    }
+  ]
+}
