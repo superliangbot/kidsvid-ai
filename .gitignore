@@ -7,3 +7,8 @@ coverage/
 .DS_Store
 *.log
 tmp/
+
+# Large output files
+output/
+packages/video-engine/public/assets/*.png
+packages/video-engine/public/assets/*.mp3

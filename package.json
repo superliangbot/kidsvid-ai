@@ -9,7 +9,8 @@
     "packages/generator",
     "packages/publisher",
     "packages/feedback",
-    "packages/orchestrator"
+    "packages/orchestrator",
+    "packages/video-engine"
   ],
   "scripts": {
     "build": "npm run build --workspaces",
