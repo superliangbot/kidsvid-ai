@@ -33,6 +33,32 @@ const OUTPUT_DIR = resolve(__dirname, '..', 'output', 'v5');
 const VEO_DELAY_MS = 150_000; // 2.5 min between Veo calls
 const VEO_POLL_INTERVAL = 10_000;
 const VEO_POLL_MAX = 60;
+const MAX_EXTEND_RETRIES = 2;
+const STATE_FILE = resolve(OUTPUT_DIR, 'pipeline_state.json');
+
+// ═══════════════════════════════════════════════════
+// RESUME STATE
+// ═══════════════════════════════════════════════════
+
+interface PipelineState {
+  completedBeats: number;
+  lastVideoUri: string | null;
+  clipPaths: string[];
+  startedAt: string;
+  updatedAt: string;
+}
+
+async function loadState(): Promise<PipelineState | null> {
+  if (!existsSync(STATE_FILE)) return null;
+  const raw = JSON.parse(await readFile(STATE_FILE, 'utf-8'));
+  console.log(`♻️  Resuming from beat ${raw.completedBeats}/${STORY_BEATS.length}`);
+  return raw;
+}
+
+async function saveState(state: PipelineState): Promise<void> {
+  state.updatedAt = new Date().toISOString();
+  await writeFile(STATE_FILE, JSON.stringify(state, null, 2));
+}
 
 // ═══════════════════════════════════════════════════
 // TYPES
@@ -308,23 +334,81 @@ async function extendClip(prevVideoUri: string, beat: StoryBeat, index: number):
   return { clipPath, videoUri: uri };
 }
 
+async function extendClipWithRetry(prevVideoUri: string, beat: StoryBeat, index: number): Promise<{ clipPath: string; videoUri: string }> {
+  for (let attempt = 1; attempt <= MAX_EXTEND_RETRIES; attempt++) {
+    try {
+      const result = await extendClip(prevVideoUri, beat, index);
+      // Quick black-screen check: if file is suspiciously small (<50KB for 7s), retry
+      const size = (await readFile(result.clipPath)).length;
+      if (size < 50_000) {
+        console.log(`⚠️  Clip #${index} suspiciously small (${(size/1024).toFixed(0)}KB) — possible black screen, retrying...`);
+        if (attempt < MAX_EXTEND_RETRIES) {
+          await sleep(30_000);
+          continue;
+        }
+      }
+      return result;
+    } catch (err: any) {
+      console.log(`⚠️  Extend #${index} attempt ${attempt} failed: ${err.message}`);
+      if (attempt < MAX_EXTEND_RETRIES) {
+        console.log(`   Retrying in 30s...`);
+        await sleep(30_000);
+      } else {
+        throw err;
+      }
+    }
+  }
+  throw new Error(`Extend #${index} failed after ${MAX_EXTEND_RETRIES} attempts`);
+}
+
 async function generateExtendChain(refImagePath: string): Promise<string[]> {
-  const clipPaths: string[] = [];
+  // Check for resume state
+  let state = await loadState();
+  let clipPaths: string[] = [];
+  let prevUri: string | null = null;
+  let startIdx = 0;
 
-  // Generate initial clip
-  const initial = await generateInitialClip(refImagePath, STORY_BEATS[0]);
-  clipPaths.push(initial.clipPath);
+  if (state && state.completedBeats > 0 && state.lastVideoUri) {
+    clipPaths = state.clipPaths;
+    prevUri = state.lastVideoUri;
+    startIdx = state.completedBeats;
+    console.log(`\n♻️  Resuming extend chain from beat ${startIdx}/${STORY_BEATS.length}`);
+  } else {
+    state = {
+      completedBeats: 0,
+      lastVideoUri: null,
+      clipPaths: [],
+      startedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+  }
 
-  let prevUri = initial.videoUri;
+  if (startIdx === 0) {
+    // Generate initial clip
+    const initial = await generateInitialClip(refImagePath, STORY_BEATS[0]);
+    clipPaths.push(initial.clipPath);
+    prevUri = initial.videoUri;
+    state.completedBeats = 1;
+    state.lastVideoUri = prevUri;
+    state.clipPaths = clipPaths;
+    await saveState(state);
+    startIdx = 1;
+  }
 
   // Extend for each subsequent beat
-  for (let i = 1; i < STORY_BEATS.length; i++) {
-    console.log(`\n⏳ Waiting ${VEO_DELAY_MS / 1000}s before next Veo call...`);
+  for (let i = startIdx; i < STORY_BEATS.length; i++) {
+    console.log(`\n⏳ Waiting ${VEO_DELAY_MS / 1000}s before next Veo call... (${i}/${STORY_BEATS.length - 1})`);
     await sleep(VEO_DELAY_MS);
 
-    const result = await extendClip(prevUri, STORY_BEATS[i], i);
+    const result = await extendClipWithRetry(prevUri!, STORY_BEATS[i], i);
     clipPaths.push(result.clipPath);
     prevUri = result.videoUri;
+
+    // Save state after each successful extension
+    state.completedBeats = i + 1;
+    state.lastVideoUri = prevUri;
+    state.clipPaths = clipPaths;
+    await saveState(state);
   }
 
   return clipPaths;
@@ -373,23 +457,88 @@ async function generateNarration(): Promise<string[]> {
 }
 
 // ═══════════════════════════════════════════════════
-// ASSEMBLY: Strip audio + overlay + compose
+// SFX GENERATION
 // ═══════════════════════════════════════════════════
 
-/**
- * For each beat's clip:
- * 1. Strip Veo audio (use video only)
- * 2. Speed-adjust or loop video to match TTS duration
- * 3. Add TTS narration as audio track
- * 4. Overlay block count number if applicable
- * 5. Concatenate all segments
- */
+async function generateSFX(): Promise<{ stackSound: string; celebrateSound: string }> {
+  const sfxDir = resolve(OUTPUT_DIR, 'sfx');
+  await mkdir(sfxDir, { recursive: true });
+
+  const stackPath = resolve(sfxDir, 'stack.wav');
+  const celebratePath = resolve(sfxDir, 'celebrate.wav');
+
+  // Generate a simple "block stack" click/thud using ffmpeg tone synthesis
+  if (!existsSync(stackPath)) {
+    // Short percussive pop: sine wave 200Hz decaying over 0.15s
+    execSync(`ffmpeg -f lavfi -i "sine=frequency=200:duration=0.15" -af "afade=t=out:st=0.05:d=0.1,volume=0.6" -y "${stackPath}" 2>/dev/null`);
+    console.log('✅ SFX: stack sound');
+  }
+
+  if (!existsSync(celebratePath)) {
+    // Rising celebration jingle: 3 ascending tones
+    execSync(`ffmpeg -f lavfi -i "sine=frequency=523:duration=0.15" -f lavfi -i "sine=frequency=659:duration=0.15" -f lavfi -i "sine=frequency=784:duration=0.3" -filter_complex "[0]adelay=0|0[a];[1]adelay=150|150[b];[2]adelay=300|300[c];[a][b][c]amix=inputs=3:duration=longest,afade=t=out:st=0.4:d=0.2,volume=0.5" -y "${celebratePath}" 2>/dev/null`);
+    console.log('✅ SFX: celebrate sound');
+  }
+
+  return { stackSound: stackPath, celebrateSound: celebratePath };
+}
+
+// ═══════════════════════════════════════════════════
+// BACKGROUND MUSIC (Gemini / fallback: generated tone)
+// ═══════════════════════════════════════════════════
+
+async function generateBackgroundMusic(totalDurationSec: number): Promise<string> {
+  const musicPath = resolve(OUTPUT_DIR, 'bg_music.wav');
+  if (existsSync(musicPath)) {
+    console.log('♻️  Using cached background music');
+    return musicPath;
+  }
+
+  console.log('\n🎵 Generating background music bed...\n');
+
+  // Generate a gentle children's music loop using layered tones
+  // C major arpeggio pattern: C4-E4-G4-C5, looped and soft
+  const dur = Math.ceil(totalDurationSec) + 5;
+  // Use a gentle pentatonic arpeggio as a music bed
+  const notes = [
+    { freq: 262, delay: 0 },     // C4
+    { freq: 330, delay: 500 },   // E4
+    { freq: 392, delay: 1000 },  // G4
+    { freq: 523, delay: 1500 },  // C5
+    { freq: 392, delay: 2000 },  // G4
+    { freq: 330, delay: 2500 },  // E4
+  ];
+
+  // Create a 3-second loop of gentle tones
+  const noteInputs = notes.map((n, i) => `-f lavfi -i "sine=frequency=${n.freq}:duration=0.4"`).join(' ');
+  const noteFilters = notes.map((n, i) => `[${i}]adelay=${n.delay}|${n.delay},afade=t=in:d=0.05,afade=t=out:st=0.3:d=0.1[n${i}]`).join(';');
+  const mixInputs = notes.map((_, i) => `[n${i}]`).join('');
+
+  const loopFile = resolve(OUTPUT_DIR, 'sfx', 'music_loop.wav');
+  execSync(`ffmpeg ${noteInputs} -filter_complex "${noteFilters};${mixInputs}amix=inputs=${notes.length}:duration=longest,volume=0.15" -t 3 -y "${loopFile}" 2>/dev/null`);
+
+  // Loop to fill total duration
+  const loops = Math.ceil(dur / 3);
+  execSync(`ffmpeg -stream_loop ${loops} -i "${loopFile}" -t ${dur} -af "afade=t=in:d=2,afade=t=out:st=${dur - 3}:d=3,volume=0.12" -y "${musicPath}" 2>/dev/null`);
+  console.log(`✅ Background music: ${dur}s`);
+
+  return musicPath;
+}
+
+// ═══════════════════════════════════════════════════
+// ASSEMBLY: Strip audio + overlay + SFX + music + compose
+// ═══════════════════════════════════════════════════
+
 async function assembleVideo(clipPaths: string[], voicePaths: string[]): Promise<string> {
   console.log('\n🎞️ Assembling final video...\n');
   const segDir = resolve(OUTPUT_DIR, 'segments');
   await mkdir(segDir, { recursive: true });
-  const segPaths: string[] = [];
 
+  const sfx = await generateSFX();
+  const segPaths: string[] = [];
+  let totalDuration = 0;
+
+  // Phase 1: Build individual segments with video + TTS + overlay + SFX
   for (let i = 0; i < STORY_BEATS.length; i++) {
     const beat = STORY_BEATS[i];
     const seg = resolve(segDir, `seg_${i.toString().padStart(2, '0')}_${beat.id}.mp4`);
@@ -398,46 +547,75 @@ async function assembleVideo(clipPaths: string[], voicePaths: string[]): Promise
     const ttsDur = parseFloat(
       execSync(`ffprobe -i "${voicePaths[i]}" -show_entries format=duration -v quiet -of csv="p=0"`).toString().trim()
     );
-    const targetDur = ttsDur + 0.8; // small padding
+    const targetDur = ttsDur + 0.8;
+    totalDuration += targetDur;
 
-    // Build FFmpeg filter chain
-    let filterComplex = '';
+    // Animated overlay: fade in the number at 0.3s, hold, fade out at end
     let overlayFilter = '';
-
-    if (beat.overlayText && beat.overlayText !== '🔟') {
-      // Draw block count number in bottom-right corner
-      overlayFilter = `,drawtext=text='${beat.overlayText}':fontsize=120:fontcolor=white:borderw=5:bordercolor=black:x=w-tw-40:y=h-th-40:fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf`;
-    } else if (beat.overlayText === '🔟') {
-      // For 10, use text "10" 
-      overlayFilter = `,drawtext=text='10':fontsize=120:fontcolor=gold:borderw=5:bordercolor=black:x=w-tw-40:y=h-th-40:fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf`;
+    const overlayNum = beat.overlayText === '🔟' ? '10' : beat.overlayText;
+    if (overlayNum) {
+      const fontColor = beat.overlayText === '🔟' ? 'gold' : 'white';
+      // Fade in at 0.3s, fade out at targetDur-0.5
+      overlayFilter = `,drawtext=text='${overlayNum}':fontsize=140:fontcolor=${fontColor}@%{if\\\\(between(t\\,0.3\\,${(targetDur - 0.5).toFixed(1)})\\,min((t-0.3)*4\\,1)\\,max(1-(t-${(targetDur - 0.5).toFixed(1)})*4\\,0))}:borderw=6:bordercolor=black@%{if\\\\(between(t\\,0.3\\,${(targetDur - 0.5).toFixed(1)})\\,min((t-0.3)*4\\,1)\\,max(1-(t-${(targetDur - 0.5).toFixed(1)})*4\\,0))}:x=w-tw-50:y=h-th-50:fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf`;
     }
 
-    // Loop video to fill TTS duration, strip original audio, add TTS, overlay number
-    const cmd = [
-      'ffmpeg',
-      '-stream_loop', '-1', '-i', `"${clipPaths[i]}"`,  // video (looped)
-      '-i', `"${voicePaths[i]}"`,                         // TTS audio
-      '-filter_complex',
-      `"[0:v]scale=1920:1080,setsar=1${overlayFilter}[v]"`,
-      '-map', '"[v]"', '-map', '1:a',
-      '-c:v', 'libx264', '-preset', 'fast', '-crf', '20',
-      '-c:a', 'aac', '-b:a', '192k',
-      '-t', targetDur.toFixed(2),
-      '-pix_fmt', 'yuv420p',
-      '-y', `"${seg}"`,
-    ].join(' ');
+    // Pick SFX: stack sound for counting beats, celebrate for celebrations
+    const sfxFile = beat.phase === 'celebrate' ? sfx.celebrateSound : (beat.phase === 'count' ? sfx.stackSound : null);
 
-    execSync(`${cmd} 2>/dev/null`);
-    console.log(`✅ Segment ${i}: ${beat.id} (${targetDur.toFixed(1)}s)${beat.overlayText ? ' [overlay: ' + beat.overlayText + ']' : ''}`);
+    if (sfxFile) {
+      // Video + TTS + SFX
+      const cmd = [
+        'ffmpeg',
+        '-stream_loop', '-1', '-i', `"${clipPaths[i]}"`,
+        '-i', `"${voicePaths[i]}"`,
+        '-i', `"${sfxFile}"`,
+        '-filter_complex',
+        `"[0:v]scale=1920:1080,setsar=1${overlayFilter}[v];[1:a]volume=1.0[voice];[2:a]adelay=300|300,volume=0.4[sfx];[voice][sfx]amix=inputs=2:duration=first[a]"`,
+        '-map', '"[v]"', '-map', '"[a]"',
+        '-c:v', 'libx264', '-preset', 'fast', '-crf', '20',
+        '-c:a', 'aac', '-b:a', '192k',
+        '-t', targetDur.toFixed(2),
+        '-pix_fmt', 'yuv420p',
+        '-y', `"${seg}"`,
+      ].join(' ');
+      execSync(`${cmd} 2>/dev/null`);
+    } else {
+      // Video + TTS only (intro/outro)
+      const cmd = [
+        'ffmpeg',
+        '-stream_loop', '-1', '-i', `"${clipPaths[i]}"`,
+        '-i', `"${voicePaths[i]}"`,
+        '-filter_complex',
+        `"[0:v]scale=1920:1080,setsar=1${overlayFilter}[v]"`,
+        '-map', '"[v]"', '-map', '1:a',
+        '-c:v', 'libx264', '-preset', 'fast', '-crf', '20',
+        '-c:a', 'aac', '-b:a', '192k',
+        '-t', targetDur.toFixed(2),
+        '-pix_fmt', 'yuv420p',
+        '-y', `"${seg}"`,
+      ].join(' ');
+      execSync(`${cmd} 2>/dev/null`);
+    }
+
+    console.log(`✅ Segment ${i}: ${beat.id} (${targetDur.toFixed(1)}s)${overlayNum ? ' [overlay: ' + overlayNum + ']' : ''}${sfxFile ? ' [+sfx]' : ''}`);
     segPaths.push(seg);
   }
 
-  // Concatenate all segments
+  // Phase 2: Concatenate all segments
+  console.log('\n🔗 Concatenating segments...');
   const concatFile = resolve(OUTPUT_DIR, 'concat.txt');
   await writeFile(concatFile, segPaths.map(s => `file '${s}'`).join('\n'));
 
+  const concatPath = resolve(OUTPUT_DIR, 'concat_no_music.mp4');
+  execSync(`ffmpeg -f concat -safe 0 -i "${concatFile}" -c:v libx264 -preset fast -crf 18 -c:a aac -b:a 192k -pix_fmt yuv420p -y "${concatPath}" 2>/dev/null`);
+
+  // Phase 3: Mix in background music (ducked under narration)
+  console.log('🎵 Adding background music...');
+  const bgMusic = await generateBackgroundMusic(totalDuration);
+
   const finalPath = resolve(OUTPUT_DIR, 'final.mp4');
-  execSync(`ffmpeg -f concat -safe 0 -i "${concatFile}" -c:v libx264 -preset fast -crf 18 -c:a aac -b:a 192k -pix_fmt yuv420p -movflags +faststart -y "${finalPath}" 2>/dev/null`);
+  // Use sidechaincompress or simple volume mixing — music at low volume under voice
+  execSync(`ffmpeg -i "${concatPath}" -i "${bgMusic}" -filter_complex "[0:a]volume=1.0[voice];[1:a]volume=0.15[music];[voice][music]amix=inputs=2:duration=first:dropout_transition=3[a]" -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -movflags +faststart -y "${finalPath}" 2>/dev/null`);
 
   const size = (await readFile(finalPath)).length;
   const dur = parseFloat(
@@ -450,10 +628,46 @@ async function assembleVideo(clipPaths: string[], voicePaths: string[]): Promise
 }
 
 // ═══════════════════════════════════════════════════
+// THUMBNAIL GENERATION
+// ═══════════════════════════════════════════════════
+
+async function generateThumbnail(refImagePath: string): Promise<string> {
+  const thumbPath = resolve(OUTPUT_DIR, 'thumbnail.png');
+  if (existsSync(thumbPath)) {
+    console.log('♻️  Using cached thumbnail');
+    return thumbPath;
+  }
+
+  console.log('\n🖼️ Generating thumbnail (DALL-E)...\n');
+
+  const res = await fetch('https://api.openai.com/v1/images/generations', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: 'dall-e-3',
+      prompt: `YouTube thumbnail for a children's counting video. A cute small blue robot named Cosmo with big brown eyes stands next to a tall colorful rainbow tower of 10 building blocks (red, orange, yellow, green, blue, purple, pink, white, cyan, gold from bottom to top). Big bold text "COUNT TO 10!" in playful kid-friendly font. Bright, colorful, eye-catching Pixar-style 3D render. Yellow starburst background. Exciting and fun!`,
+      n: 1,
+      size: '1792x1024',
+      quality: 'hd',
+      response_format: 'b64_json',
+    }),
+  });
+
+  const data = await res.json();
+  if (!data.data?.[0]?.b64_json) throw new Error(`Thumbnail DALL-E failed: ${JSON.stringify(data)}`);
+  await writeFile(thumbPath, Buffer.from(data.data[0].b64_json, 'base64'));
+  console.log(`✅ Thumbnail saved: ${thumbPath}`);
+  return thumbPath;
+}
+
+// ═══════════════════════════════════════════════════
 // UPLOAD TO YOUTUBE
 // ═══════════════════════════════════════════════════
 
-async function uploadToYouTube(videoPath: string): Promise<string> {
+async function uploadToYouTube(videoPath: string, thumbnailPath?: string): Promise<string> {
   console.log('\n📤 Uploading to YouTube (PRIVATE)...\n');
 
   const { google } = await import('googleapis');
@@ -497,6 +711,22 @@ Subscribe to Super Builders for more educational fun! ⭐`,
 
   const videoId = res.data.id!;
   console.log(`✅ Uploaded: https://youtube.com/watch?v=${videoId} (PRIVATE)`);
+
+  // Set custom thumbnail if provided
+  if (thumbnailPath && existsSync(thumbnailPath)) {
+    try {
+      await youtube.thumbnails.set({
+        videoId,
+        media: {
+          body: createReadStream(thumbnailPath),
+        },
+      });
+      console.log('✅ Custom thumbnail set');
+    } catch (err: any) {
+      console.log(`⚠️  Thumbnail upload failed (may need verified account): ${err.message}`);
+    }
+  }
+
   return videoId;
 }
 
@@ -530,14 +760,18 @@ async function main() {
   // Step 4: Assemble (strip audio, overlay numbers, concat)
   const finalPath = await assembleVideo(clipPaths, voicePaths);
 
-  // Step 5: Upload (private)
+  // Step 5: Thumbnail
+  const thumbnail = await generateThumbnail(refImage);
+
+  // Step 6: Upload (private)
   const skipUpload = process.argv.includes('--no-upload');
   if (!skipUpload) {
-    const videoId = await uploadToYouTube(finalPath);
+    const videoId = await uploadToYouTube(finalPath, thumbnail);
     console.log(`\n🎉 V5 COMPLETE! Video ID: ${videoId}`);
     console.log(`   Review at: https://studio.youtube.com/video/${videoId}/edit`);
   } else {
     console.log(`\n🎉 V5 COMPLETE! Video at: ${finalPath}`);
+    console.log(`   Thumbnail at: ${thumbnail}`);
     console.log('   (Upload skipped — use without --no-upload to publish)');
   }
 }
