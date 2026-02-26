@@ -33,3 +33,15 @@ export const COSMO_IDENTITY = {
 } as const;
 
 export type CosmoIdentity = typeof COSMO_IDENTITY;
+
+/**
+ * Multi-angle reference image prompts for Imagen 4.
+ * Generate each angle, then pass up to 3 as referenceImages to Veo 3.1.
+ */
+export const COSMO_REFERENCE_ANGLES = {
+  front: `Full body front view of ${COSMO_IDENTITY.description}, standing in a T-pose with arms outstretched, simple white background, character design reference sheet, centered composition, studio lighting.`,
+  threeQuarter: `Three-quarter view of ${COSMO_IDENTITY.description}, standing naturally with a slight turn to the right, simple white background, character design reference sheet, centered composition, studio lighting.`,
+  side: `Full body side profile view (left side facing camera) of ${COSMO_IDENTITY.description}, standing upright, simple white background, character design reference sheet, centered composition, studio lighting.`,
+  back: `Full body rear view of ${COSMO_IDENTITY.description}, facing away from camera, simple white background, character design reference sheet, centered composition, studio lighting.`,
+  faceCloseup: `Close-up face portrait of ${COSMO_IDENTITY.description}, front-facing, warm expression, simple white background, studio lighting, detailed.`,
+} as const;

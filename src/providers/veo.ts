@@ -11,6 +11,15 @@
 
 import { GoogleGenAI } from '@google/genai';
 
+export interface ReferenceImage {
+  /** Base64-encoded image bytes. */
+  imageBytes: string;
+  /** MIME type. Defaults to 'image/png'. */
+  mimeType?: string;
+  /** Reference type. 'asset' for character/object references. */
+  referenceType?: 'asset';
+}
+
 export interface VeoClipOptions {
   /** Motion-only prompt — do NOT re-describe the character (the image has it). */
   prompt: string;
@@ -18,10 +27,21 @@ export interface VeoClipOptions {
   startingFrame?: string;
   /** MIME type for the starting frame. Defaults to 'image/png'. */
   startingFrameMime?: string;
+  /** Last frame for interpolation (Veo 3.1 only). Base64. */
+  lastFrame?: string;
+  /** MIME type for the last frame. Defaults to 'image/png'. */
+  lastFrameMime?: string;
+  /**
+   * Up to 3 reference images to guide character/asset consistency (Veo 3.1 only).
+   * Pass multi-angle character refs here (front, side, back).
+   */
+  referenceImages?: ReferenceImage[];
   /** Clip duration in seconds (Veo supports 5–8). */
   durationSec?: number;
   /** Aspect ratio. Defaults to '16:9'. */
   aspectRatio?: '16:9' | '9:16';
+  /** Resolution. Defaults to '1080p'. */
+  resolution?: '720p' | '1080p' | '4k';
   /** Negative prompt — always set, but can be extended per-call. */
   negativePrompt?: string;
   /** Seed for reproducibility across scenes. */
@@ -69,21 +89,44 @@ export class VeoProvider {
 
     const durationSec = options.durationSec ?? 8;
     const aspectRatio = options.aspectRatio ?? '16:9';
+    const resolution = options.resolution ?? '1080p';
 
     // Build the generateVideos request — Gemini API schema
+    const config: Record<string, unknown> = {
+      aspectRatio,
+      durationSeconds: durationSec,
+      resolution,
+      negativePrompt,
+      personGeneration: 'allow_all',
+      ...(options.seed !== undefined ? { seed: options.seed } : {}),
+    };
+
+    // Reference images for character consistency (Veo 3.1 only, up to 3)
+    if (options.referenceImages && options.referenceImages.length > 0) {
+      config.referenceImages = options.referenceImages.map((ref) => ({
+        image: {
+          imageBytes: ref.imageBytes,
+          mimeType: ref.mimeType ?? 'image/png',
+        },
+        referenceType: ref.referenceType ?? 'asset',
+      }));
+    }
+
+    // Last frame for interpolation (Veo 3.1 only)
+    if (options.lastFrame) {
+      config.lastFrame = {
+        imageBytes: options.lastFrame,
+        mimeType: options.lastFrameMime ?? 'image/png',
+      };
+    }
+
     const request: Record<string, unknown> = {
       model: this.model,
       prompt: options.prompt,
-      config: {
-        aspectRatio,
-        durationSeconds: durationSec,
-        negativePrompt,
-        personGeneration: 'allow_all',
-        ...(options.seed !== undefined ? { seed: options.seed } : {}),
-      },
+      config,
     };
 
-    // Image-to-video: pass `image` directly (NOT referenceImages)
+    // Image-to-video: pass `image` directly as starting frame
     if (options.startingFrame) {
       request.image = {
         imageBytes: options.startingFrame,
