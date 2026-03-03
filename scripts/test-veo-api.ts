@@ -18,7 +18,7 @@ async function main() {
   console.log('Test 1: referenceImages only (no starting frame)...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'A small blue robot waves at the camera in a bright colorful workshop. Warm lighting, slow zoom in. (no subtitles)',
       config: {
         aspectRatio: '16:9',
@@ -40,7 +40,7 @@ async function main() {
   console.log('\nTest 2: image only (starting frame, no referenceImages)...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'The robot waves its right arm at the camera. Slow zoom in. Warm lighting. (no subtitles)',
       image: { imageBytes: frame.toString('base64'), mimeType: 'image/png' },
       config: {
@@ -58,7 +58,7 @@ async function main() {
   console.log('\nTest 3: text-to-video only...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'A small blue robot waves at the camera in a colorful workshop.',
     });
     console.log('✅ Test 3 SUCCESS — request accepted');
@@ -71,7 +71,7 @@ async function main() {
   console.log('\nTest 4: image + personGeneration=allow_adult...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'The robot waves its right arm at the camera. Slow zoom in. (no subtitles)',
       image: { imageBytes: frame.toString('base64'), mimeType: 'image/png' },
       config: {

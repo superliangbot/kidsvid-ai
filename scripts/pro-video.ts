@@ -199,7 +199,7 @@ async function generateVideoClips(
       const veoDuration = scene.durationSec <= 5 ? 4 : scene.durationSec <= 7 ? 6 : 8;
       
       let operation = await client.models.generateVideos({
-        model: 'veo-3.1-generate-preview',
+        model: 'veo-3.1-generate-001',
         prompt: `${scene.visual}. Style: bright colorful 3D children's animation, child-safe, ages 2-5. Simple rounded shapes, saturated colors, smooth gentle animation. The character Cosmo is a friendly small blue robot with big round eyes and a warm smile.`,
         config: {
           aspectRatio: '16:9',

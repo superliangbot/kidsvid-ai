@@ -174,7 +174,7 @@ Reply with ONLY the refined prompt, nothing else.` }],
         // and fall back to image-to-video if referenceImages fails.
         
         const veoRequest: any = {
-          model: 'veo-3.1-generate-preview',
+          model: 'veo-3.1-generate-001',
           prompt: refinedPrompt,
           config: {
             aspectRatio: '16:9',

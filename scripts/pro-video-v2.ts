@@ -321,7 +321,7 @@ async function generateVideoFromImage(
   const veoDuration = scene.durationSec <= 5 ? 4 : scene.durationSec <= 7 ? 6 : 8;
 
   let operation = await client.models.generateVideos({
-    model: 'veo-3.1-generate-preview',
+    model: 'veo-3.1-generate-001',
     prompt: `${scene.videoPrompt}. Bright colorful 3D children's animation, child-safe, ages 2-5.`,
     referenceImages: [{
       image: {

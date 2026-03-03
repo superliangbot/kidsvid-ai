@@ -42,7 +42,7 @@ async function main() {
     try {
       const frameData = await readFile(framePath);
       let op = await client.models.generateVideos({
-        model: 'veo-3.1-generate-preview',
+        model: 'veo-3.1-generate-001',
         prompt: scene.motion,
         image: { imageBytes: frameData.toString('base64'), mimeType: 'image/png' },
         config: {

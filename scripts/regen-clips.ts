@@ -74,7 +74,7 @@ async function main() {
 
     try {
       let op = await client.models.generateVideos({
-        model: 'veo-3.1-generate-preview',
+        model: 'veo-3.1-generate-001',
         prompt: scene.prompt,
         config: {
           aspectRatio: '16:9',

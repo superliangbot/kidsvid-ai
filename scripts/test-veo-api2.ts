@@ -19,7 +19,7 @@ async function main() {
   console.log('Test A: referenceImages only, no negativePrompt...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'A small blue robot waves at the camera in a bright colorful workshop. Warm lighting, slow zoom in. (no subtitles, no text overlays)',
       config: {
         aspectRatio: '16:9',
@@ -39,7 +39,7 @@ async function main() {
   console.log('\nTest B: referenceImages + personGeneration=allow_adult...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'A small blue robot waves at the camera in a bright colorful workshop.',
       config: {
         aspectRatio: '16:9',
@@ -60,7 +60,7 @@ async function main() {
   console.log('\nTest C: 3 referenceImages...');
   try {
     const op = await client.models.generateVideos({
-      model: 'veo-3.1-generate-preview',
+      model: 'veo-3.1-generate-001',
       prompt: 'A small blue robot waves at the camera in a bright colorful workshop.',
       config: {
         aspectRatio: '16:9',

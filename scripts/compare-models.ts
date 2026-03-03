@@ -39,8 +39,8 @@ const VEO_MODELS = [
   { id: 'veo-2.0-generate-001', name: 'Veo 2', costPerSec: 0.35, supportsAudio: false },
   { id: 'veo-3.0-fast-generate-001', name: 'Veo 3 Fast', costPerSec: 0.15, supportsAudio: true },
   { id: 'veo-3.0-generate-001', name: 'Veo 3', costPerSec: 0.40, supportsAudio: true },
-  { id: 'veo-3.1-fast-generate-preview', name: 'Veo 3.1 Fast', costPerSec: 0.15, supportsAudio: true },
-  { id: 'veo-3.1-generate-preview', name: 'Veo 3.1', costPerSec: 0.40, supportsAudio: true },
+  { id: 'veo-3.1-fast-generate-001', name: 'Veo 3.1 Fast', costPerSec: 0.15, supportsAudio: true },
+  { id: 'veo-3.1-generate-001', name: 'Veo 3.1', costPerSec: 0.40, supportsAudio: true },
 ];
 
 const IMAGEN_MODELS = [

@@ -61,7 +61,7 @@ async function main() {
 
         // Use image-to-video if reference image exists
         const genConfig: any = {
-          model: 'veo-3.1-generate-preview',
+          model: 'veo-3.1-generate-001',
           prompt: `${scene.videoPrompt}. Bright colorful 3D children's animation, child-safe, ages 2-5.`,
           config: { aspectRatio: '16:9', durationSeconds: veoDuration, personGeneration: 'allow_all' },
         };

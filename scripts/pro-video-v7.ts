@@ -233,7 +233,7 @@ async function generateVeoClip(
   console.log(`   ${beat.veoPrompt.substring(0, 90)}...`);
 
   let operation = await client.models.generateVideos({
-    model: 'veo-3.1-generate-preview',
+    model: 'veo-3.1-generate-001',
     prompt: beat.veoPrompt,
     referenceImages: [{
       image: { imageBytes: refBase64, mimeType: 'image/png' },

@@ -255,7 +255,7 @@ async function generateInitialClip(refImagePath: string, beat: StoryBeat): Promi
   console.log(`   Prompt: ${beat.veoPrompt.substring(0, 100)}...`);
 
   let operation = await client.models.generateVideos({
-    model: 'veo-3.1-generate-preview',
+    model: 'veo-3.1-generate-001',
     prompt: beat.veoPrompt,
     referenceImages: [{
       image: { imageBytes: refBase64, mimeType: 'image/png' },
@@ -301,7 +301,7 @@ async function extendClip(prevVideoUri: string, beat: StoryBeat, index: number):
 
   // For extend, we pass the previous video URI
   let operation = await client.models.generateVideos({
-    model: 'veo-3.1-generate-preview',
+    model: 'veo-3.1-generate-001',
     prompt: beat.veoPrompt,
     video: { uri: prevVideoUri },
     config: {

@@ -186,7 +186,7 @@ Reply with ONLY the refined prompt.` }] }],
       console.log(`  🎬 Generating video (Veo 3.1 + ${referenceImages.length} refs)...`);
       try {
         const veoReq: any = {
-          model: 'veo-3.1-generate-preview',
+          model: 'veo-3.1-generate-001',
           prompt: refinedPrompt,
           config: {
             aspectRatio: '16:9',

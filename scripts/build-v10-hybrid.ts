@@ -223,7 +223,7 @@ async function main() {
       console.log(`  🎬 Veo 3.1 + referenceImages...`);
       try {
         let op = await client.models.generateVideos({
-          model: 'veo-3.1-generate-preview',
+          model: 'veo-3.1-generate-001',
           prompt: scene.motionPrompt,
           config: {
             aspectRatio: '16:9',

@@ -295,7 +295,7 @@ async function generateVeoChain(refImagePath: string): Promise<string> {
           // Initial clip with reference image
           console.log(`\n🎬 Generating INITIAL Veo clip: ${beat.id}`);
           result = await veoGenerate({
-            model: 'veo-3.1-generate-preview',
+            model: 'veo-3.1-generate-001',
             prompt: beat.veoPrompt,
             referenceImages: [{ image: { imageBytes: refBase64, mimeType: 'image/png' }, operation: 'SUBJECT_REFERENCE' }],
             config: { aspectRatio: '16:9', durationSeconds: 8, personGeneration: 'allow_all' },
@@ -304,7 +304,7 @@ async function generateVeoChain(refImagePath: string): Promise<string> {
           // Extend from previous
           console.log(`\n🔗 Extending Veo clip #${i}: ${beat.id}`);
           result = await veoGenerate({
-            model: 'veo-3.1-generate-preview',
+            model: 'veo-3.1-generate-001',
             prompt: beat.veoPrompt,
             video: { uri: prevUri },
             config: { aspectRatio: '16:9', personGeneration: 'allow_all' },

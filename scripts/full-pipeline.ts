@@ -135,7 +135,7 @@ async function generateVideoClips(
 
     try {
       let operation = await client.models.generateVideos({
-        model: 'veo-3.1-generate-preview',
+        model: 'veo-3.1-generate-001',
         prompt: `${scene.description}. Style: colorful children's 3D animation, bright and friendly, child-safe content for ages 2-5. Simple shapes, vibrant colors, smooth animation.`,
         config: {
           aspectRatio: '16:9',

@@ -399,7 +399,7 @@ async function generateVeoClip(imgPath: string, scene: any, clipPath: string): P
     : `The blue robot Cosmo gestures at the tower of ${scene.blockCount} building blocks. The blocks stay in place. Gentle subtle animation, camera slowly zooms. Bright 3D children's animation, child-safe.`;
 
   let operation = await client.models.generateVideos({
-    model: 'veo-3.1-generate-preview',
+    model: 'veo-3.1-generate-001',
     prompt,
     referenceImages: [{ image: { imageBytes: base64, mimeType: 'image/png' }, operation: 'SUBJECT_REFERENCE' }],
     config: { aspectRatio: '16:9', durationSeconds: veoDur, personGeneration: 'allow_all' },
